@@ -142,7 +142,7 @@
                </textarea>
                </div>
      </div>
-     <button type="button" class="btn btn-primary">SAVE</button>
+     <button type="button" class="btn btn-primary">Simpan</button>
      <button type="button" class="btn btn-danger">CANCEL</button>
 
      
