@@ -1,7 +1,7 @@
 <div class="container">
 	<section class="content-header">
 		<h1>
-			Form Pesanan T-Shirt
+			Form Pesanan PDL
 		</h1><br>
 	</section>
 	<section class="content">
@@ -15,14 +15,10 @@
 						<label for="input" class="col-sm-3 col-form-label">Jenis Kain</label>
 						<div class="col-sm-9">
 							<select class="form-control " style="width: 100%;">
-								<option>Katun 20 S</option>
-								<option>Katun 24 S</option>
-								<option>Katun 30 S</option>
-								<option>Kardet 20 S</option>
-								<option>Kardet 30 S</option>
-								<option>Polyester</option>
-								<option>PE</option>
-								<option>Kardet 20 S</option>
+								<option>American Drill</option>
+								<option>Nagata Drill</option>
+								<option>Obor</option>
+								<option>Taipan</option>
 							</select>
 						</div>
 					</div>
@@ -31,16 +27,6 @@
 						<label for="input" class="col-sm-3 col-form-label">Warna Kain</label>
 						<div class="col-sm-9">
 							<input type="text" class="form-control" id="input" placeholder="Warna Kain">
-						</div>
-					</div>
-
-					<div class="form-group row">
-						<label for="input" class="col-sm-3 col-form-label">Jenis Sablon</label>
-						<div class="col-sm-9">
-							<select class="form-control " style="width: 100%;">
-								<option>Rubber</option>
-								<option>Plastisol</option>
-							</select>
 						</div>
 					</div>
 
@@ -146,17 +132,18 @@
 							<span class="input-group-text" id="">Upload</span>
 						</div>
 					</div>
+
 				</div>
 
 				<div class="form-group row">
 					<label for="message" class="col-sm-3 col-form-label">Keterangan</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" id="message" placeholder="Keterangan">
+						<textarea value="Keterangan" class="form-control">
+               </textarea>
 					</div>
 				</div>
-			</div>
-			<button type="button" class="btn btn-primary">SAVE</button>
-			<button type="button" class="btn btn-danger">CANCEL</button>
+				<button type="button" class="btn btn-primary">SAVE</button>
+				<button type="button" class="btn btn-danger">CANCEL</button>
 
 
 

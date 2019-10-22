@@ -7,14 +7,7 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<?php
-			$query = "SELECT MAX(`no`) as `kodepegawai` from pegawai";
-			$dariDB = $this->db->query($query)->row();
-			$data = $dariDB->kodepegawai;
-			// contoh JRD0004, angka 3 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
-			$nourut = substr($data, 3, 4);
-			$kodeBarangSekarang = $nourut + 1;
-			?>
+			-->
 			<div class="modal-body">
 				<div id="custom-modal" class="modal-demo">
 					<form action="<?= base_url('pegawai/tambah_pegawai') ?>" method="post">

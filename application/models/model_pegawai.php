@@ -13,7 +13,6 @@ class Model_pegawai extends CI_Model
 	{
 		$post = $this->input->post();
 		$data = array(
-			"no"           => $post['no'],
 			"nama"         => $post['nama'],
 			'level'        => $post["level"],
 			'pekerjaan' 	=> $post["pekerjaan"],
@@ -42,7 +41,7 @@ class Model_pegawai extends CI_Model
 	{
 		$post = $this->input->post();
 		$data = array(
-			"no"           => $post['no'],
+
 			"nama"         => $post['nama'],
 			'level'        => $post["level"],
 			'pekerjaan' 	=> $post["pekerjaan"],
@@ -50,26 +49,34 @@ class Model_pegawai extends CI_Model
 		$this->db->where('id_pegawai', $this->input->post('id_pegawai'));
 		$this->db->update('pegawai', $data);
 	}
-	public function kode()
-	{
+	// <!-- <?php
+	// $query = "SELECT MAX(`no`) as `kodepegawai` from pegawai";
+	// $dariDB = $this->db->query($query)->row();
+	// $data = $dariDB->kodepegawai;
+	// // contoh JRD0004, angka 3 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
+	// $nourut = substr($data, 3, 4);
+	// $kodeBarangSekarang = $nourut + 1;
+	// 
+	// public function kode()
+	// {
 
-		//keterangan 
-		//tbl_users di ganti sesuai dengan nama tabel costumer di database
+	// 	//keterangan 
+	// 	//tbl_users di ganti sesuai dengan nama tabel costumer di database
 
-		$this->db->select('RIGHT(pegawai.no,2) as kode_pegawai', FALSE);
-		$this->db->order_by('kode_pegawai', 'DESC');
-		$this->db->limit(1);
-		$query = $this->db->get('pegawai');  //cek dulu apakah ada sudah ada kode di tabel.    
-		if ($query->num_rows() <> 0) {
-			//cek kode jika telah tersedia    
-			$data = $query->row();
-			$kode = intval($data->kode_pegawai) + 1;
-		} else {
-			$kode = 1;  //cek jika kode belum terdapat pada table
-		}
-		$tgl = date('dmY');
-		$batas = str_pad($kode, 3, "0", STR_PAD_LEFT);
-		$kodetampil = "K" . $tgl . $batas;  //format kode
-		return $kodetampil;
-	}
+	// 	$this->db->select('RIGHT(pegawai.no,2) as kode_pegawai', FALSE);
+	// 	$this->db->order_by('kode_pegawai', 'DESC');
+	// 	$this->db->limit(1);
+	// 	$query = $this->db->get('pegawai');  //cek dulu apakah ada sudah ada kode di tabel.    
+	// 	if ($query->num_rows() <> 0) {
+	// 		//cek kode jika telah tersedia    
+	// 		$data = $query->row();
+	// 		$kode = intval($data->kode_pegawai) + 1;
+	// 	} else {
+	// 		$kode = 1;  //cek jika kode belum terdapat pada table
+	// 	}
+	// 	$tgl = date('dmY');
+	// 	$batas = str_pad($kode, 3, "0", STR_PAD_LEFT);
+	// 	$kodetampil = "K" . $tgl . $batas;  //format kode
+	// 	return $kodetampil;
+	// }
 }

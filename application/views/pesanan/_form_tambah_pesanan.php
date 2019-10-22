@@ -11,14 +11,13 @@
 				<div class="box-body">
 					<form role="form">
 						<div class="row">
-
 							<div class="box-body">
 								<div class="col-md-3">
 									<div class="form-group">
 										<label>Nama Costumer</label>
 										<select class="form-control select2" style="width: 100%;">
 											<?php foreach ($costumer as $key => $value) : ?>
-												<option style="line-height: unset;"><?= $value['nama'] ?></option>
+												<option style="line-height: unset;" value="<?= $value['id'] ?>"><?= $value['nama'] ?></option>
 											<?php endforeach; ?>
 										</select>
 									</div>
@@ -28,7 +27,7 @@
 										<label>Nama Pegawai</label>
 										<select class="form-control select2" style="width: 100%;">
 											<?php foreach ($pegawai as $key => $value) : ?>
-												<option style="line-height: unset;"><?= $value['nama'] ?></option>
+												<option style="line-height: unset;" value="<?= $value['id_pegawai'] ?>"><?= $value['nama'] ?></option>
 											<?php endforeach; ?>
 										</select>
 									</div>
@@ -72,7 +71,7 @@
 										<input type="text" class="form-control" id="code_orderan" placeholder="">
 									</div>
 								</div>
-								<div class="col-md-3">
+								<!-- <div class="col-md-3">
 									<label>User/Cs Transaksi</label>
 									<select class="form-control select2" style="width: 100%;">
 										<option selected="selected">Alabama</option>
@@ -83,7 +82,7 @@
 										<option>Texas</option>
 										<option>Washington</option>
 									</select>
-								</div>
+								</div> -->
 								<div class="col-md-3">
 									<label>Status Transaksi</label>
 									<select class="form-control select2" style="width: 100%;">
@@ -91,344 +90,58 @@
 										<option>Selesai</option>
 									</select>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-6">
 									<label>Kategori Produk</label>
 									<select id="produk" class="form-control">
 										<option value="">Pilih Produk</option>
-										<option value="Polo Shirt">Polo Shirt</option>
-										<option value="T-Shirt">T-Shirt</option>
-										<option value="Celana">Celana</option>
-										<option value="Jaket">Jaket</option>
-										<option value="Topi">Topi</option>
-										<option value="PDL">PDL</option>
+										<?php foreach ($produk as $key => $value) : ?>
+											<option value="<?= $value['nama'] ?>"><?= $value['nama'] ?></option>
+										<?php endforeach; ?>
 									</select>
 								</div>
-								<div class="col-md-2">
-									<label>&nbsp;</label>
-									<button type="submit" class="btn btn-primary form-control">Simpan</button>
-								</div>
-								<div class="col-md-1">
-									<label>&nbsp;</label>
-									<button type="submit" class="btn btn-danger form-control">Reset</button>
-								</div>
 							</div>
 
-							<!-- select produk PDL-->
-							<div class="box box-success" id="select-PDL">
-								<div class="box-body">
-									<div class="row">
-										<section class="content-header ">
-											<h1>Form Katagori Produk <span id="header-select"></span></h1>
-											<br>
-										</section>
-										<section class="content">
-											<div class="row">
-												<div class="col-md-12">
-													<div class="form-group row">
-														<label for="input" class="col-sm-3 col-form-label">Jenis Kain</label>
-														<div class="col-sm-9">
-															<select class="form-control " style="width: 100%;">
-																<option>American Drill</option>
-																<option>Nagata Drill</option>
-																<option>Obor</option>
-																<option>Taipan</option>
-															</select>
-														</div>
-													</div>
-
-													<div class="form-group row">
-														<label for="input" class="col-sm-3 col-form-label">Warna Kain</label>
-														<div class="col-sm-9">
-															<input type="text" class="form-control" id="input" placeholder="Warna Kain">
-														</div>
-													</div>
-
-													<div class="form-group row">
-														<label for="input" class="col-sm-3 col-form-label">Jumlah</label>
-														<div class="col-sm-9">
-															<input type="text" class="form-control" id="input" placeholder="Jumlah">
-														</div>
-													</div>
-												</div>
-											</div>
-
-											<div class="row">
-
-												<div class="col-md-3">
-													<div class="form-group row">
-														<label for="input" class="col-sm-3 col-form-label"></label>
-														<div class="col-sm-9">
-														</div>
-													</div>
-
-												</div>
-												<div class="col-md-3">
-													<div class="form-group row">
-														<label for="input" class="col-sm-3 col-form-label">XS</label>
-														<div class="col-sm-9">
-															<input type="text" class="form-control" id="input" placeholder="Panjang">
-															<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-														</div>
-
-
-														<label for="input" class="col-sm-3 col-form-label">L</label>
-														<div class="col-sm-9">
-															<input type="text" class="form-control" id="input" placeholder="Panjang">
-															<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-														</div>
-
-														<label for="input" class="col-sm-3 col-form-label">XXXL</label>
-														<div class="col-sm-9">
-															<input type="text" class="form-control" id="input" placeholder="Panjang">
-															<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-														</div>
-
-
-													</div>
-												</div>
-
-												<div class="col-md-3">
-													<div class="form-group row">
-														<label for="input" class="col-sm-3 col-form-label">S</label>
-														<div class="col-sm-9">
-															<input type="text" class="form-control" id="input" placeholder="Panjang">
-															<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-														</div>
-
-
-														<label for="input" class="col-sm-3 col-form-label">XL</label>
-														<div class="col-sm-9">
-															<input type="text" class="form-control" id="input" placeholder="Panjang">
-															<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-														</div>
-
-														<label for="input" class="col-sm-3 col-form-label">Jumbo</label>
-														<div class="col-sm-9">
-															<input type="text" class="form-control" id="input" placeholder="Panjang">
-															<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-														</div>
-
-
-													</div>
-												</div>
-
-												<div class="col-md-3">
-													<div class="form-group row">
-														<label for="input" class="col-sm-3 col-form-label">M</label>
-														<div class="col-sm-9">
-															<input type="text" class="form-control" id="input" placeholder="Panjang">
-															<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-														</div>
-
-
-														<label for="input" class="col-sm-3 col-form-label">XXL</label>
-														<div class="col-sm-9">
-															<input type="text" class="form-control" id="input" placeholder="Panjang">
-															<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-														</div>
-
-													</div>
-												</div>
-												<div class="row">
-													<div class="col-md-12">
-														<div class="form-group row">
-															<label for="input" class="col-sm-3 col-form-label">Keterangan</label>
-															<div class="col-sm-9">
-																<textarea id="note_4_1" name="transaction_job_note[4][1]" class="form-control" rows="5" placeholder="Keterangan"></textarea>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col-md-12">
-														<div class="form-group row">
-															<label class="col-sm-3 col-form-label">Upload File</label>
-
-															<div class="col-sm-9">
-																<div class="custom-file">
-																	<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-																	<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</section>
-									</div>
-								</div>
+							<!-- select produk forum Celana-->
+							<div class="box box-success selected " id="Celana">
+								<?php
+								include APPPATH . 'views/pesanan/form_celana.php';
+								?>
 							</div>
+							<!-- select produk forum jaket-->
+							<div class="box box-success selected" id="Jaket">
+								<?php
+								include APPPATH . 'views/pesanan/form_jaket.php';
+								?>
+							</div>
+							<!-- select produk forum topi-->
+							<div class="box box-success selected" id="Topi">
+								<?php
+								include APPPATH . 'views/pesanan/form_topi.php';
+								?>
+							</div>
+							<!-- select produk forum tshirt-->
+							<div class="box box-success selected" id="T-Shirt">
+								<?php
+								include APPPATH . 'views/pesanan/form_tshirt.php';
+								?>
+							</div>
+							<!-- select produk forum PDL-->
+							<div class="box box-success selected" id="PDL">
+								<?php
+								include APPPATH . 'views/pesanan/form_pdl.php';
+								?>
+							</div>
+
 							<!-- select produk Polo-->
-							<div class="box box-success" id="select-Polo">
-								<div class="box-body">
-									<div class="row">
-										<section class="content-header">
-											<h1>
-												Form Pesanan Polo Shirt
-											</h1><br>
-										</section>
-										<section class="content">
-											<form>
-
-												<div class="row">
-
-													<div class="col-md-12">
-
-														<div class="form-group row">
-															<label for="input" class="col-sm-3 col-form-label">Jenis Kain</label>
-															<div class="col-sm-9">
-																<select class="form-control " style="width: 100%;">
-																	<option>Lacos Katun</option>
-																	<option>TC</option>
-																	<option>Polyester PE</option>
-																	<option>Double Katun</option>
-																</select>
-															</div>
-														</div>
-
-														<div class="form-group row">
-															<label for="input" class="col-sm-3 col-form-label">Warna Kain</label>
-															<div class="col-sm-9">
-																<input type="text" class="form-control" id="input" placeholder="Warna Kain">
-															</div>
-														</div>
-
-														<div class="form-group row">
-															<label for="input" class="col-sm-3 col-form-label">Jenis Sablon</label>
-															<div class="col-sm-9">
-																<select class="form-control " style="width: 100%;">
-																	<option>Rubber</option>
-																	<option>Plastisol</option>
-																</select>
-															</div>
-														</div>
-
-														<div class="form-group row">
-															<label for="input" class="col-sm-3 col-form-label">Jumlah</label>
-															<div class="col-sm-9">
-																<input type="text" class="form-control" id="input" placeholder="Jumlah">
-															</div>
-														</div>
-
-													</div>
-												</div>
-
-												<div class="row">
-
-													<div class="col-md-3">
-														<div class="form-group row">
-															<label for="input" class="col-sm-3 col-form-label"></label>
-															<div class="col-sm-9">
-															</div>
-														</div>
-
-													</div>
-													<div class="col-md-3">
-														<div class="form-group row">
-															<label for="input" class="col-sm-3 col-form-label">XS</label>
-															<div class="col-sm-9">
-																<input type="text" class="form-control" id="input" placeholder="Panjang">
-																<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-															</div>
-
-
-															<label for="input" class="col-sm-3 col-form-label">L</label>
-															<div class="col-sm-9">
-																<input type="text" class="form-control" id="input" placeholder="Panjang">
-																<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-															</div>
-
-															<label for="input" class="col-sm-3 col-form-label">XXXL</label>
-															<div class="col-sm-9">
-																<input type="text" class="form-control" id="input" placeholder="Panjang">
-																<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-															</div>
-
-
-														</div>
-													</div>
-
-													<div class="col-md-3">
-														<div class="form-group row">
-															<label for="input" class="col-sm-3 col-form-label">S</label>
-															<div class="col-sm-9">
-																<input type="text" class="form-control" id="input" placeholder="Panjang">
-																<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-															</div>
-
-
-															<label for="input" class="col-sm-3 col-form-label">XL</label>
-															<div class="col-sm-9">
-																<input type="text" class="form-control" id="input" placeholder="Panjang">
-																<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-															</div>
-
-															<label for="input" class="col-sm-3 col-form-label">Jumbo</label>
-															<div class="col-sm-9">
-																<input type="text" class="form-control" id="input" placeholder="Panjang">
-																<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-															</div>
-
-
-														</div>
-													</div>
-
-													<div class="col-md-3">
-														<div class="form-group row">
-															<label for="input" class="col-sm-3 col-form-label">M</label>
-															<div class="col-sm-9">
-																<input type="text" class="form-control" id="input" placeholder="Panjang">
-																<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-															</div>
-
-
-															<label for="input" class="col-sm-3 col-form-label">XXL</label>
-															<div class="col-sm-9">
-																<input type="text" class="form-control" id="input" placeholder="Panjang">
-																<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
-															</div>
-
-
-														</div>
-													</div>
-												</div>
-
-												<div class="row">
-													<div class="form-group">
-														<label for="exampleInputFile" class="col-sm-3 col-form-label">Upload File</label>
-														<div class="input-group">
-															<div class="costum-file">
-																<input type="file" class="custom-file-input" id="exampleInputFile">
-																<label class="custom-file-label" for="exampleInputFile">Choose file</label>
-															</div>
-															<div class="input-group-append">
-																<span class="input-group-text" id="">Upload</span>
-															</div>
-														</div>
-													</div>
-
-													<div class="form-group row">
-														<label for="message" class="col-sm-3 col-form-label">Keterangan</label>
-														<div class="col-sm-9">
-															<input type="text" class="form-control" id="message" placeholder="Keterangan">
-														</div>
-													</div>
-												</div>
-												<button type="button" class="btn btn-primary">SAVE</button>
-												<button type="button" class="btn btn-danger">CANCEL</button>
-											</form>
-										</section>
-									</div>
-								</div>
+							<div class="box box-success selected" id="Polo-Shirt">
+								<?php
+								include APPPATH . 'views/pesanan/form_polo.php';
+								?>
 							</div>
-						
-							
-						
-
 
 
 							<!-- jika kosong select produk-->
-							<div class="box box-success" id="select-kosong">
+							<div class="box box-success selected" id="kosong">
 								<div class="box-body">
 									<div class="row">
 										<section>

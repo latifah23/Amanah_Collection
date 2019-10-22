@@ -7,6 +7,7 @@ class Pesanan extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model("model_pegawai");
+		$this->load->model('model_produk');
 		$this->load->model("model_costumer");
 		$this->load->library('form_validation');
 	}
@@ -19,6 +20,7 @@ class Pesanan extends CI_Controller
 
 	public function tambah_pesanan()
 	{
+		$data['produk'] = $this->model_produk->getAll();
 		$data['pegawai'] = $this->model_pegawai->getAll();
 		$data['costumer'] = $this->model_costumer->getAll();
 		$this->load->view('layouts/header');

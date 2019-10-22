@@ -1,7 +1,7 @@
 <div class="container">
 	<section class="content-header">
 		<h1>
-			Form Pesanan T-Shirt
+			Form Pesanan Polo Shirt
 		</h1><br>
 	</section>
 	<section class="content">
@@ -15,14 +15,10 @@
 						<label for="input" class="col-sm-3 col-form-label">Jenis Kain</label>
 						<div class="col-sm-9">
 							<select class="form-control " style="width: 100%;">
-								<option>Katun 20 S</option>
-								<option>Katun 24 S</option>
-								<option>Katun 30 S</option>
-								<option>Kardet 20 S</option>
-								<option>Kardet 30 S</option>
-								<option>Polyester</option>
-								<option>PE</option>
-								<option>Kardet 20 S</option>
+								<option>Lacos Katun</option>
+								<option>TC</option>
+								<option>Polyester PE</option>
+								<option>Double Katun</option>
 							</select>
 						</div>
 					</div>

@@ -1,31 +1,7 @@
 $(function() {
-	$("#select-PDL").hide(); //select id pdl di sembunyiin from PDL
-	$("#select-Polo").hide(); //select id Polo sembunyiin from Polo
-	$("#produk").on("change", function() {
-		if ($(this).val() == "") {
-			//jika kosong
-			$("#select-PDL").hide(1000); //.hide(1000) di sembuyikan dalam kecepatan 1 detik
-			$("#select-Polo").hide(1000);
-			$("#select-kosong").show(500);
-		} else if ($(this).val() == "PDL") {
-			//select PDL
-			$("#select-Polo").hide(1000);
-			$("#select-kosong").hide(500);
-			$("#select-PDL")
-				.hide(100)
-				.show(1000);
-			$("#header-select").html(this.value);
-		} else if ($(this).val() == "Polo Shirt") {
-			$("#select-PDL").hide(1000);
-			$("#select-kosong").hide(500);
-			$("#select-Polo")
-				.hide(100)
-				.show(1000);
-			$("#header-select").html(this.value);
-		} else {
-			$("#select-produk").hide(1000);
-			$("#select-kosong").show(500);
-		}
+	$("#produk").change(function() {
+		$(".selected").hide(500);
+		$("#" + $(this).val()).show(1000);
 	});
 });
 

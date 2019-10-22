@@ -22,7 +22,6 @@ class Pegawai extends CI_Controller
 
 	public function tambah_pegawai()
 	{
-		$this->form_validation->set_rules('no', 'No', 'required');
 		$this->form_validation->set_rules('nama', 'Nama', 'required');
 		$this->form_validation->set_rules('level', 'Level', 'required');
 		$this->form_validation->set_rules('pekerjaan', 'Pekerjaan', 'required');
@@ -38,7 +37,6 @@ class Pegawai extends CI_Controller
 	public function edit_pegawai($id)
 	{
 		$data['pegawai'] = $this->model_pegawai->getByid($id);
-		$this->form_validation->set_rules('no', 'No', 'required');
 		$this->form_validation->set_rules('nama', 'Nama', 'required');
 		$this->form_validation->set_rules('level', 'Level', 'required');
 		$this->form_validation->set_rules('pekerjaan', 'Pekerjaan', 'required');
