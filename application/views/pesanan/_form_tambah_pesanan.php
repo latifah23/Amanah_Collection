@@ -39,9 +39,8 @@
 										<option>Produk</option>
 										<option>Polo Shirt</option>
 										<option>T-Shirt</option>
-										<option>Seragam olahraga</option>
+										<option>Celanaa</option>
 										<option>Jaket</option>
-										<option>Kemeja</option>
 										<option>Topi</option>
 										<option>Sabuk</option>
 										<option>PDL</option>

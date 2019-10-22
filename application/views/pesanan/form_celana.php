@@ -12,17 +12,21 @@
           <div class="col-md-12">
 
                <div class="form-group row">
-               <label for="input" class="col-sm-3 col-form-label">Jenis Kain</label>
+               <label for="input" class="col-sm-3 col-form-label">Jenis Kain Celana</label>
                <div class= "col-sm-9">
 		          <select class="form-control " style="width: 100%;">
-		          	<option>American Drill</option>
-		          	<option>Nagata Drill</option>
-	               	<option>Obor</option>
-                    	<option>Taipan</option>
+		          	<option>Paragon</option>
+		          	<option>Diadora</option>
+	               	<option>Lotto</option>
+                    	<option>Adidas</option>
+                         <option>Spandek</option>
+                         <option>Dry fit</option>
+                         <option>Wafer</option>
+                         <option>Hyget</option>
                     </select>
 			</div>
                </div>
-               
+
                <div class="form-group row">
                <label for="input" class="col-sm-3 col-form-label">Warna Kain</label>
                <div class="col-sm-9">

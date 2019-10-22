@@ -39,4 +39,11 @@ class Pesanan extends CI_Controller
 		$this->load->view('pesanan/form_polo');
 		$this->load->view('layouts/footer');
 	}
+
+	public function form_celana()
+	{
+		$this->load->view('layouts/header');
+		$this->load->view('pesanan/form_celana');
+		$this->load->view('layouts/footer');
+	}
 }
