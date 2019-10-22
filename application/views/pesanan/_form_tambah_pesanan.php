@@ -97,11 +97,9 @@
 										<option value="">Pilih Produk</option>
 										<option value="Polo Shirt">Polo Shirt</option>
 										<option value="T-Shirt">T-Shirt</option>
-										<option value="Seragam Olahraga">Seragam Olahraga</option>
+										<option value="Celana">Celana</option>
 										<option value="Jaket">Jaket</option>
-										<option value="Kemeja">Kemeja</option>
 										<option value="Topi">Topi</option>
-										<option value="Sabuk">Sabuk</option>
 										<option value="PDL">PDL</option>
 									</select>
 								</div>
@@ -423,6 +421,11 @@
 									</div>
 								</div>
 							</div>
+						
+							
+						
+
+
 
 							<!-- jika kosong select produk-->
 							<div class="box box-success" id="select-kosong">

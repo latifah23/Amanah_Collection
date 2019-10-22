@@ -1,7 +1,7 @@
 <div class="container">
      <section class="content-header">
 			<h1>
-				Form Pesanan T-Shirt
+				Form Pesanan Jaket
 			</h1><br>
      </section>
      <section class="content">
@@ -11,18 +11,31 @@
 
           <div class="col-md-12">
 
+          <div class="form-group row">
+               <label for="input" class="col-sm-3 col-form-label">Jenis Jaket</label>
+               <div class= "col-sm-9">
+		          <select class="form-control " style="width: 100%;">
+		          	<option>Boomber</option>
+		          	<option>Parka</option>
+	               	<option>Sport</option>
+                    	<option>Varsity</option>
+                    </select>
+			</div>
+               </div>
+
                <div class="form-group row">
                <label for="input" class="col-sm-3 col-form-label">Jenis Kain</label>
                <div class= "col-sm-9">
 		          <select class="form-control " style="width: 100%;">
-		          	<option>Katun 20 S</option>
-		          	<option>Katun 24 S</option>
-	               	<option>Katun 30 S</option>
-                    	<option>Kardet 20 S</option>
-                         <option>Kardet 30 S</option>
-                         <option>Polyester</option>
-                         <option>PE</option>
-                         <option>Kardet 20 S</option>
+		          	<option>Diadora</option>
+		          	<option>Lotto</option>
+	               	<option>Adidas</option>
+                    	<option>Terry</option>
+                         <option>Fleece</option>
+                         <option>Kanvas</option>
+                         <option>Taslan</option>
+                         <option>Mikro</option>
+                         <option>Parasut</option>
                     </select>
 			</div>
                </div>

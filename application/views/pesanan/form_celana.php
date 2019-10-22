@@ -1,7 +1,7 @@
 <div class="container">
      <section class="content-header">
 			<h1>
-				Form Pesanan PDL
+				Form Pesanan Celana
 			</h1><br>
      </section>
      <section class="content">

@@ -46,4 +46,26 @@ class Pesanan extends CI_Controller
 		$this->load->view('pesanan/form_celana');
 		$this->load->view('layouts/footer');
 	}
+
+	public function form_tshirt()
+	{
+		$this->load->view('layouts/header');
+		$this->load->view('pesanan/form_tshirt');
+		$this->load->view('layouts/footer');
+	}
+
+
+	public function form_jaket()
+	{
+		$this->load->view('layouts/header');
+		$this->load->view('pesanan/form_jaket');
+		$this->load->view('layouts/footer');
+	}
+
+	public function form_topi()
+	{
+		$this->load->view('layouts/header');
+		$this->load->view('pesanan/form_topi');
+		$this->load->view('layouts/footer');
+	}
 }
