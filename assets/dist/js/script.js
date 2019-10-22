@@ -1,4 +1,35 @@
 $(function() {
+	$("#select-PDL").hide(); //select id pdl di sembunyiin from PDL
+	$("#select-Polo").hide(); //select id Polo sembunyiin from Polo
+	$("#produk").on("change", function() {
+		if ($(this).val() == "") {
+			//jika kosong
+			$("#select-PDL").hide(1000); //.hide(1000) di sembuyikan dalam kecepatan 1 detik
+			$("#select-Polo").hide(1000);
+			$("#select-kosong").show(500);
+		} else if ($(this).val() == "PDL") {
+			//select PDL
+			$("#select-Polo").hide(1000);
+			$("#select-kosong").hide(500);
+			$("#select-PDL")
+				.hide(100)
+				.show(1000);
+			$("#header-select").html(this.value);
+		} else if ($(this).val() == "Polo Shirt") {
+			$("#select-PDL").hide(1000);
+			$("#select-kosong").hide(500);
+			$("#select-Polo")
+				.hide(100)
+				.show(1000);
+			$("#header-select").html(this.value);
+		} else {
+			$("#select-produk").hide(1000);
+			$("#select-kosong").show(500);
+		}
+	});
+});
+
+$(function() {
 	$("#example1").DataTable();
 	$("#example2").DataTable({
 		paging: true,
@@ -21,40 +52,17 @@ $(function() {
 	$("[data-mask]").inputmask();
 
 	//Date range picker
-	$("#reservation").daterangepicker();
+	$("#reservation").daterangepicker(function(start, end) {
+		$("#reservation").html(
+			start.format("MMMM D, YYYY") + " to " + end.format("MMMM D, YYYY")
+		);
+	});
 	//Date range picker with time picker
 	$("#reservationtime").daterangepicker({
 		timePicker: true,
 		timePickerIncrement: 30,
 		locale: { format: "MM/DD/YYYY hh:mm A" }
 	});
-	//Date range as a button
-	$("#daterange-btn").daterangepicker(
-		{
-			ranges: {
-				Today: [moment(), moment()],
-				Yesterday: [moment().subtract(1, "days"), moment().subtract(1, "days")],
-				"Last 7 Days": [moment().subtract(6, "days"), moment()],
-				"Last 30 Days": [moment().subtract(29, "days"), moment()],
-				"This Month": [moment().startOf("month"), moment().endOf("month")],
-				"Last Month": [
-					moment()
-						.subtract(1, "month")
-						.startOf("month"),
-					moment()
-						.subtract(1, "month")
-						.endOf("month")
-				]
-			},
-			startDate: moment().subtract(29, "days"),
-			endDate: moment()
-		},
-		function(start, end) {
-			$("#daterange-btn span").html(
-				start.format("MMMM D, YYYY") + " - " + end.format("MMMM D, YYYY")
-			);
-		}
-	);
 
 	//Date picker
 	$("#datepicker").datepicker({
