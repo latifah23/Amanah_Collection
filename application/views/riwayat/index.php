@@ -3,7 +3,7 @@
 		<!-- Content Header (Page header) -->
 		<section class="content-header">
 			<h1>
-				Data Pesanan Masuk
+				Data Riwayat Pesanan
 			</h1>
 		</section>
 
@@ -15,17 +15,17 @@
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-							<th>Costumer</th>
-							<th>Produk</th>
-							<th>Kode Order</th>
-							<th>Pegawai</th>
-							<th>Tanggal Masuk</th>
-							<th>Tanggal Selesai</th>
-							<th>Status</th>
-							<th>Tindakan</th>
+								<th>Costumer</th>
+								<th>Produk</th>
+								<th>Kode Order</th>
+								<th>Pegawai</th>
+								<th>Tanggal Masuk</th>
+								<th>Tanggal Selesai</th>
+								<th>Status</th>
+								<th>Tindakan</th>
 							</tr>
 						</thead>
-						
+
 					</table>
 				</div>
 			</div>
