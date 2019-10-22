@@ -35,6 +35,16 @@
                </div>
 
                <div class="form-group row">
+               <label for="input" class="col-sm-3 col-form-label">Jenis Sablon</label>
+               <div class= "col-sm-9">
+		          <select class="form-control " style="width: 100%;">
+		          	<option>Rubber</option>
+		          	<option>Plastisol</option>
+                    </select>
+			</div>
+               </div>
+
+               <div class="form-group row">
                <label for="input" class="col-sm-3 col-form-label">Jumlah</label>
                <div class="col-sm-9">
                     <input type="text" class="form-control" id="input" placeholder="Jumlah">
