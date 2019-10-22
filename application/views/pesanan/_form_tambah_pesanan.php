@@ -92,48 +92,48 @@
 								</div>
 								<div class="col-md-6">
 									<label>Kategori Produk</label>
-									<select id="produk" class="form-control">
+									<select id="produk" class="form-control select">
 										<option value="">Pilih Produk</option>
 										<?php foreach ($produk as $key => $value) : ?>
-											<option value="<?= $value['nama'] ?>"><?= $value['nama'] ?></option>
+											<option value="<?= $value['id_produk'] ?>" name="<?= $value['nama'] ?>"> <?= $value['nama'] ?></option>
 										<?php endforeach; ?>
 									</select>
 								</div>
 							</div>
 
 							<!-- select produk forum Celana-->
-							<div class="box box-success selected " id="Celana">
+							<div class="box box-success selected" style="display:none" id="Celana">
 								<?php
 								include APPPATH . 'views/pesanan/form_celana.php';
 								?>
 							</div>
 							<!-- select produk forum jaket-->
-							<div class="box box-success selected" id="Jaket">
+							<div class="box box-success selected" style="display:none" id="Jaket">
 								<?php
 								include APPPATH . 'views/pesanan/form_jaket.php';
 								?>
 							</div>
 							<!-- select produk forum topi-->
-							<div class="box box-success selected" id="Topi">
+							<div class="box box-success selected" style="display:none" id="Topi">
 								<?php
 								include APPPATH . 'views/pesanan/form_topi.php';
 								?>
 							</div>
 							<!-- select produk forum tshirt-->
-							<div class="box box-success selected" id="T-Shirt">
+							<div class="box box-success selected" style="display:none" id="T-Shirt">
 								<?php
 								include APPPATH . 'views/pesanan/form_tshirt.php';
 								?>
 							</div>
 							<!-- select produk forum PDL-->
-							<div class="box box-success selected" id="PDL">
+							<div class="box box-success selected" style="display:none" id="PDL">
 								<?php
 								include APPPATH . 'views/pesanan/form_pdl.php';
 								?>
 							</div>
 
 							<!-- select produk Polo-->
-							<div class="box box-success selected" id="Polo-Shirt">
+							<div class="box box-success selected" style="display:none" id="Polo-Shirt">
 								<?php
 								include APPPATH . 'views/pesanan/form_polo.php';
 								?>
@@ -141,7 +141,7 @@
 
 
 							<!-- jika kosong select produk-->
-							<div class="box box-success selected" id="kosong">
+							<div class="box box-success selected" style="display:none" id="kosong">
 								<div class="box-body">
 									<div class="row">
 										<section>

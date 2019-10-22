@@ -1,7 +1,14 @@
 $(function() {
+	// if ($(this).html() == "") {
+	// .find('option').each(function()
 	$("#produk").change(function() {
 		$(".selected").hide(500);
-		$("#" + $(this).val()).show(1000);
+		$(
+			"#" +
+				$(this)
+					.find("option:selected")
+					.attr("name")
+		).show(1000);
 	});
 });
 
