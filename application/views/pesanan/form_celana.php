@@ -11,14 +11,14 @@
 					<label for="input" class="col-sm-3 col-form-label">Jenis Kain Celana</label>
 					<div class="col-sm-9">
 						<select class="form-control " style="width: 100%;" name="jenis kain">
-							<option>Paragon</option>
-							<option>Diadora</option>
-							<option>Lotto</option>
-							<option>Adidas</option>
-							<option>Spandek</option>
-							<option>Dry fit</option>
-							<option>Wafer</option>
-							<option>Hyget</option>
+							<option value="Paragon">Paragon</option>
+							<option value="Diadora">Diadora</option>
+							<option value="Lotto">Lotto</option>
+							<option value="Adidas">Adidas</option>
+							<option value="Spandek">Spandek</option>
+							<option value="Dry fit">Dry fit</option>
+							<option value="Wafer">Wafer</option>
+							<option value="Hyget">Hyget</option>
 						</select>
 					</div>
 				</div>
@@ -26,16 +26,16 @@
 				<div class="form-group row">
 					<label for="input" class="col-sm-3 col-form-label">Warna Kain</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" id="input" placeholder="Warna Kain">
+						<input type="text" class="form-control" id="input" placeholder="Warna Kain" name="warna">
 					</div>
 				</div>
 
 				<div class="form-group row">
 					<label for="input" class="col-sm-3 col-form-label">Jenis Sablon</label>
 					<div class="col-sm-9">
-						<select class="form-control " style="width: 100%;">
-							<option>Rubber</option>
-							<option>Plastisol</option>
+						<select class="form-control " style="width: 100%;" name="jenis_sablon">
+							<option value="Rubber">Rubber</option>
+							<option value="Plastisol">Plastisol</option>
 						</select>
 					</div>
 				</div>
@@ -43,7 +43,7 @@
 				<div class="form-group row">
 					<label for="input" class="col-sm-3 col-form-label">Jumlah</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" id="input" placeholder="Jumlah">
+						<input type="text" class="form-control" id="input" placeholder="Jumlah" name="jumlah_pemesanan">
 					</div>
 				</div>
 
@@ -148,11 +148,11 @@
 			<div class="form-group row">
 				<label for="message" class="col-sm-3 col-form-label">Keterangan</label>
 				<div class="col-sm-9">
-					<textarea value="Keterangan" class="form-control">
+					<textarea value="Keterangan" class="form-control" name="keterangan">
                </textarea>
 				</div>
 			</div>
-			<button type="button" class="btn btn-primary">Simpan</button>
+			<button type="submit" class="btn btn-primary">SAVE</button>
 			<button type="button" class="btn btn-danger">CANCEL</button>
 	</section>
 </div>

@@ -35,6 +35,7 @@ class Pesanan extends CI_Controller
 		$this->form_validation->set_rules('warna', 'Warna', 'required');
 		$this->form_validation->set_rules('jumlah_pemesanan', 'Jumlah_Pemesanan', 'required');
 		$this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
+		$this->form_validation->set_rules('jenis_sablon', 'jenis_sablon', 'required');
 
 		if ($this->form_validation->run() == false) {
 			$data['kode_order']  = $this->model_pemesanan->cekkodeorder();

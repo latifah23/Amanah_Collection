@@ -58,7 +58,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label>Kode Orderan</label>
-										<input type="text" class="form-control" id="code_orderan" name="kode_order" value="<?php echo $kode_order ?>" readonly>
+										<input type="text" class="form-control" id="code_orderan" name="kode_order" value="<?= $kode_order ?>" readonly>
 									</div>
 								</div>
 								<!-- <div class="col-md-3">
@@ -138,9 +138,9 @@
 											<h5 class="text-center">Data Katagori belum di pilih</h5>
 										</section>
 									</div>
-								</div>
-							</div> -->
+								</div>-->
 						</div>
+
 					</form>
 				</div>
 			</div>

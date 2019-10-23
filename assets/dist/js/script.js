@@ -2,7 +2,9 @@ $(function() {
 	// if ($(this).html() == "") {
 	// .find('option').each(function()
 	$("#produk").change(function() {
-		$(".selected").hide(500);
+		$(".selected")
+			.hide(500)
+			.prop("disabled", true);
 		$(
 			"#" +
 				$(this)

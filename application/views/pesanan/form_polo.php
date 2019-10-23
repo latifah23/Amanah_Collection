@@ -5,8 +5,8 @@
 		</h1><br>
 	</section>
 
-	<section class="content">
-		<div class="row">
+	<div class="row">
+		<section class="content">
 
 			<div class="col-md-12">
 
@@ -33,8 +33,8 @@
 					<label for="input" class="col-sm-3 col-form-label">Jenis Sablon</label>
 					<div class="col-sm-9">
 						<select class="form-control " style="width: 100%;" name="jenis_sablon">
-							<option>Rubber</option>
-							<option>Plastisol</option>
+							<option value="Rubber">Rubber</option>
+							<option value="Plastisol">Plastisol</option>
 						</select>
 					</div>
 				</div>
@@ -47,10 +47,10 @@
 				</div>
 
 			</div>
-		</div>
+	</div>
 
-		<div class="row">
-
+	<div class="row">
+		<div class="col-md-12">
 			<div class="col-md-3">
 				<div class="form-group row">
 					<label for="input" class="col-sm-3 col-form-label"></label>
@@ -146,15 +146,14 @@
 			<div class="form-group row">
 				<label for="message" class="col-sm-3 col-form-label">Keterangan</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="message" name="keterangan" placeholder="Keterangan">
+					<textarea id="note_1_1" name="keterangan" class="form-control" placeholder="Keterangan Pekerjaan"></textarea>
+					</textarea>
 				</div>
 			</div>
 		</div>
 
 		<button type="submit" class="btn btn-primary">SAVE</button>
 		<button type="button" class="btn btn-danger">CANCEL</button>
-
-
-
+	</div>
 	</section>
 </div>

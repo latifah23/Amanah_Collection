@@ -22,7 +22,7 @@ class Model_pemesanan extends CI_Model
 		//keterangan 
 		//tbl_users di ganti sesuai dengan nama tabel costumer di database
 
-		$this->db->select('RIGHT(pemesanan.kode_order,0) as kode_order', FALSE);
+		$this->db->select('RIGHT(pemesanan.kode_order,2) as kode_order', FALSE);
 		$this->db->order_by('kode_order', 'DESC');
 		$this->db->limit(1);
 		$query = $this->db->get('pemesanan');  //cek dulu apakah ada sudah ada kode di tabel.    
@@ -52,6 +52,7 @@ class Model_pemesanan extends CI_Model
 			"jenis_kain" 			=> $post["jenis_kain"],
 			"warna" 				=> $post["warna"],
 			"jumlah_pemesanan" 		=> $post["jumlah_pemesanan"],
+			"jenis_sablon"			=> $post["jenis_sablon"],
 			"keterangan" 			=> $post["keterangan"]
 		);
 
