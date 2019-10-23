@@ -61,31 +61,31 @@ class Model_pemesanan extends CI_Model
 	}
 
 
-	function hapus_pemesanan($id)
-	{
-		//produces:
-		//WHERE id_nomor008 = $id
-		$this->db->where('id', $id);
-		//DELETE FORM mytable
-		$this->db->delete("costumer");
-	}
+	// function hapus_pemesanan($id)
+	// {
+	// 	//produces:
+	// 	//WHERE id_nomor008 = $id
+	// 	$this->db->where('id', $id);
+	// 	//DELETE FORM mytable
+	// 	$this->db->delete("costumer");
+	// }
 
-	public function getByid($id)
-	{
-		return $this->db->get_where('costumer', ['id' => $id])->row_array();
-	}
+	// public function getByid($id)
+	// {
+	// 	return $this->db->get_where('costumer', ['id' => $id])->row_array();
+	// }
 
 
-	public function update_pemesanan()
-	{
-		$post = $this->input->post();
-		$data = array(
-			"nama"         => $post['nama'],
-			'alamat'       => $post["alamat"],
-			'notelp' 		=> $post["notelp"],
-			'email'		=> $post["email"],
-		);
-		$this->db->where('id', $this->input->post('id'));
-		$this->db->update('costumer', $data);
-	}
+	// public function update_pemesanan()
+	// {
+	// 	$post = $this->input->post();
+	// 	$data = array(
+	// 		"nama"         => $post['nama'],
+	// 		'alamat'       => $post["alamat"],
+	// 		'notelp' 		=> $post["notelp"],
+	// 		'email'		=> $post["email"],
+	// 	);
+	// 	$this->db->where('id', $this->input->post('id'));
+	// 	$this->db->update('costumer', $data);
+	// }
 }

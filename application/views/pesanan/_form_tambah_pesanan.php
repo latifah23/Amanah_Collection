@@ -4,7 +4,10 @@
 		<section class="content-header">
 			<h1>
 				Tambah Pesanan
+				<a href="<?= base_url('/pesanan') ?>" type="button" class="btn btn-block btn-primary" style="width:auto; float:right;">BACK</a>
+
 			</h1>
+
 		</section>
 		<section class="content">
 			<div class="box box-success">
@@ -61,18 +64,8 @@
 										<input type="text" class="form-control" id="code_orderan" name="kode_order" value="<?= $kode_order ?>" readonly>
 									</div>
 								</div>
-								<!-- <div class="col-md-3">
-									<label>User/Cs Transaksi</label>
-									<select class="form-control select2" style="width: 100%;">
-										<option selected="selected">Alabama</option>
-										<option>Alaska</option>
-										<option>California</option>
-										<option>Delaware</option>
-										<option>Tennessee</option>
-										<option>Texas</option>
-										<option>Washington</option>
-									</select>
-								</div> -->
+
+								
 								<div class="col-md-3">
 									<label>Status Transaksi</label>
 									<select class="form-control select2" style="width: 100%;" name="status">
@@ -99,35 +92,35 @@
 							</div>
 
 							<!-- select produk forum Celana -->
-							<!-- <div class="box box-success selected" style="display:none" id="Celana">
+							<div class="box box-success selected" style="display:none" id="Celana">
 								<?php
 								include APPPATH . 'views/pesanan/form_celana.php';
 								?>
-							</div> -->
+							</div> 
 							<!-- select produk forum jaket-->
-							<!-- <div class="box box-success selected" style="display:none" id="Jaket">
+							<div class="box box-success selected" style="display:none" id="Jaket">
 								<?php
 								include APPPATH . 'views/pesanan/form_jaket.php';
 								?>
-							</div> -->
+							</div> 
 							<!-- select produk forum topi-->
-							<!-- <div class="box box-success selected" style="display:none" id="Topi">
+							<div class="box box-success selected" style="display:none" id="Topi">
 								<?php
 								include APPPATH . 'views/pesanan/form_topi.php';
 								?>
-							</div> -->
+							</div>
 							<!-- select produk forum tshirt-->
-							<!-- <div class="box box-success selected" style="display:none" id="T-Shirt">
+							<div class="box box-success selected" style="display:none" id="T-Shirt">
 								<?php
 								include APPPATH . 'views/pesanan/form_tshirt.php';
 								?>
-							</div> -->
+							</div>
 							<!-- select produk forum PDL-->
-							<!-- <div class="box box-success selected" style="display:none" id="PDL">
+							<div class="box box-success selected" style="display:none" id="PDL">
 								<?php
 								include APPPATH . 'views/pesanan/form_pdl.php';
 								?>
-							</div> -->
+							</div>
 
 
 							<!-- jika kosong select produk-->

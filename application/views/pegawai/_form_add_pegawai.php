@@ -7,7 +7,7 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			-->
+			
 			<div class="modal-body">
 				<div id="custom-modal" class="modal-demo">
 					<form action="<?= base_url('pegawai/tambah_pegawai') ?>" method="post">
