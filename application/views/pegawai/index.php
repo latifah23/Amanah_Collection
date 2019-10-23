@@ -36,7 +36,7 @@
 						<tbody>
 							<?php foreach ($pegawai as $key => $value) : ?>
 								<tr>
-									<td><?= $key+1 ?></td>
+									<td><?= $key + 1 ?></td>
 									<td><?= $value['nama'] ?></td>
 									<td><?= $value['level'] ?></td>
 									<td><?= $value['pekerjaan'] ?></td>
@@ -48,6 +48,7 @@
 								</tr>
 							<?php endforeach; ?>
 						</tbody>
+
 					</table>
 				</div>
 			</div>
