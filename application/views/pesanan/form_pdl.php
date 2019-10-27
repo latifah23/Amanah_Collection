@@ -139,14 +139,14 @@
 					<label for="message" class="col-sm-3 col-form-label">Keterangan</label>
 					<div class="col-sm-9">
 						<textarea value="Keterangan" class="form-control">
-               </textarea>
+              				</textarea>
 					</div>
 				</div>
 				<button type="button" class="btn btn-primary">SAVE</button>
 				<button type="button" class="btn btn-danger">CANCEL</button>
 
 
-
+ 
 		</form>
 	</section>
 </div>

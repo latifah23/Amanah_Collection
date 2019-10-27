@@ -18,12 +18,20 @@
 								<input type="text" class="form-control" id="nama" name="nama">
 							</div>
 							<div class="form-group">
-								<label for="level">Level</label>
-								<input type="level" class="form-control" id="level" name="level">
+							<label for="name">Level</label>
+							<select class="form-control " style="width: 100%;" name="Level">
+								<option value="Admin">Admin</option>
+								<option value="Pegawai">Pegawai</option>
+							</select>
 							</div>
 							<div class="form-group">
-								<label for="pekerjaan">Pekerjaan</label>
-								<input type="text" class="form-control" id="pekerjaan" name="pekerjaan">
+							<label for="pekerjaan">Pekerjaan</label>
+							<select class="form-control " style="width: 100%;" name="Level">
+								<option value="Potong">Potong</option>
+								<option value="Sablon">Sablon</option>
+								<option value="Jahit">Jahit</option>
+								<option value="Packing">Packing</option>
+							</select>
 							</div>
 						</div>
 						<div class="modal-footer">

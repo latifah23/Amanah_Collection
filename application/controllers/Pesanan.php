@@ -12,6 +12,8 @@ class Pesanan extends CI_Controller
 		$this->load->model("model_pemesanan");
 
 		$this->load->library('form_validation');
+		
+
 	}
 	public function index()
 	{
@@ -50,5 +52,37 @@ class Pesanan extends CI_Controller
 			$this->session->set_flashdata('flash', 'Ditambahkan');
 			redirect('pesanan');
 		}
+	}
+
+	public function edit_pesanan($id)
+	{
+		$data['pesanan'] = $this->model_pemesanan->getByid($id);
+		// response_json($data);
+		$this->form_validation->set_rules('costumer', 'Costumer', 'required');
+		$this->form_validation->set_rules('produk', 'Produk', 'required');
+		$this->form_validation->set_rules('kode_order', 'Kode_order', 'required');
+		$this->form_validation->set_rules('pagawai', 'Pagawai', 'required');
+		$this->form_validation->set_rules('durasi_pemesanan', 'durasi_pemesanan', 'required');
+		$this->form_validation->set_rules('pagewai', 'Pagewai', 'required');
+		$this->form_validation->set_rules('status', 'status', 'status');
+
+
+
+		if ($this->form_validation->run() ==  FALSE) {
+			$this->load->view("layouts/header");
+			$this->load->view('pesanan/edit_pesanan', $data);
+			$this->load->view("layouts/footer");
+		} else {
+			$this->model_pemesanan->update_pesanan();
+			$this->session->set_flashdata('flash', 'Diupdate');
+			redirect('pesanan');
+		}
+	}
+
+	function hapus_pesanan($id)
+	{
+		$this->model_pemesanan->hapus_pemesanan($id);
+		$this->session->set_flashdata('flash', 'DiHapus');
+		redirect('pesanan');
 	}
 }

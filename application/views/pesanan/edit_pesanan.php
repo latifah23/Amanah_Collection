@@ -18,23 +18,36 @@
 				<form action="" method="post">
 					<div class="modal-body">
 						<form action="" method="post">
-							<input type="hidden" name="id_pegawai" value="<?= $pegawai['id_pegawai'] ?>">
+							<input type="hidden" name="id" value="<?= $pesanan['id'] ?>">
 
 							<div class="form-group">
-								<label for="nama">Nama</label>
-								<input type="text" class="form-control" id="nama" name="nama" value="<?= $pegawai['nama'] ?>">
+								<label for="costumer">Costumer</label>
+								<input type="text" class="form-control" id="costumer" name="costumer_id" value="<?= $pesanan['costumer_id'] ?>">
 							</div>
 							<div class="form-group">
-								<label for="level">Level</label>
-								<input type="text" class="form-control" id="level" name="level" value="<?= $pegawai['level'] ?>">
+								<label for="produk">produk</label>
+								<input type="text" class="form-control" id="produk" name="produk_id" value="<?= $pesanan['produk_id'] ?>">
 							</div>
 							<div class="form-group">
-								<label for="pekerjaan">Pekerjaan</label>
-								<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="<?= $pegawai['pekerjaan'] ?>">
+								<label for="kode_order">kode_order</label>
+								<input type="text" class="form-control" id="kode_order" name="kode_order" value="<?= $pesanan['kode_order'] ?>">
 							</div>
+							<div class="form-group">
+								<label for="durasi_pemesanan">durasi_pemesanan</label>
+								<input type="text" class="form-control" id="durasi_pemesanan" name="durasi_pemesanan" value="<?= $pesanan['durasi_pemesanan'] ?>">
+							</div>
+							<div class="form-group">
+								<label for="kode_order">kode_order</label>
+								<input type="text" class="form-control" id="kode_order" name="kode_order" value="<?= $pesanan['kode_order'] ?>">
+							</div>
+							<div class="form-group">
+								<label for="status">status</label>
+								<input type="text" class="form-control" id="status" name="status" value="<?= $pesanan['status'] ?>">
+							</div>
+
 					</div>
 					<div class="modal-footer">
-						<a class="btn btn-info " href="<?= base_url('admin/') ?>">Kembali</a>
+						<a class="btn btn-info " href="<?= base_url('pesanan/') ?>">Kembali</a>
 						<button type="submit" class="btn btn-primary">Save changes</button>
 					</div>
 				</form>

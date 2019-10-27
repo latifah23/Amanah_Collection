@@ -61,31 +61,38 @@ class Model_pemesanan extends CI_Model
 	}
 
 
-	// function hapus_pemesanan($id)
-	// {
-	// 	//produces:
-	// 	//WHERE id_nomor008 = $id
-	// 	$this->db->where('id', $id);
-	// 	//DELETE FORM mytable
-	// 	$this->db->delete("costumer");
-	// }
+	public function hapus_pemesanan($id)
+	{
+		//produces:
+		//WHERE id_nomor008 = $id
+		$this->db->where('id', $id);
+		//DELETE FORM mytable
+		$this->db->delete("pemesanan");
+	}
 
-	// public function getByid($id)
-	// {
-	// 	return $this->db->get_where('costumer', ['id' => $id])->row_array();
-	// }
+	public function getByid($id)
+	{
+		return $this->db->get_where('pemesanan', ['id' => $id])->row_array();
+	}
 
 
-	// public function update_pemesanan()
-	// {
-	// 	$post = $this->input->post();
-	// 	$data = array(
-	// 		"nama"         => $post['nama'],
-	// 		'alamat'       => $post["alamat"],
-	// 		'notelp' 		=> $post["notelp"],
-	// 		'email'		=> $post["email"],
-	// 	);
-	// 	$this->db->where('id', $this->input->post('id'));
-	// 	$this->db->update('costumer', $data);
-	// }
+	public function update_pemesanan()
+	{
+		$post = $this->input->post();
+		$data = array(
+			"pegawai_id" 			=> $post["pegawai_id"],
+			"costumer_id" 			=> $post["costumer_id"],
+			"durasi_pemesanan" 		=> $post["durasi_pemesanan"],
+			"kode_order" 			=> $post["kode_order"],
+			"status" 				=> $post["status"],
+			"produk_id" 			=> $post["produk_id"],
+			"jenis_kain" 			=> $post["jenis_kain"],
+			"warna" 				=> $post["warna"],
+			"jumlah_pemesanan" 		=> $post["jumlah_pemesanan"],
+			"jenis_sablon"			=> $post["jenis_sablon"],
+			"keterangan" 			=> $post["keterangan"]
+		);
+		$this->db->where('id', $this->input->post('id'));
+		$this->db->update('pemesanan', $data);
+	}
 }

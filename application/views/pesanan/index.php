@@ -44,8 +44,8 @@
 									</td>
 
 									<td>
-										<a href="" class="btn btn-info btn-sm ">Edit</a>
-										<a href="" class="btn btn-danger btn-sm" onclick="return confirm('yakin?')">Hapus</a>
+										<a href="<?= base_url('/pesanan/edit_pesanan/').$value['id']?>" class="btn btn-info btn-sm ">Edit</a>
+										<a href="<?= base_url('/pesanan/hapus_pesanan/').$value['id']?>" class="btn btn-danger btn-sm" onclick="return confirm('yakin?')">Hapus</a>
 									</td>
 
 								</tr>
