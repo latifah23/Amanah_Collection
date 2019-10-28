@@ -74,7 +74,10 @@ class Model_pemesanan extends CI_Model
 	{
 		return $this->db->get_where('pemesanan', ['id' => $id])->row_array();
 	}
-
+	public function getBykode($kode)
+	{
+		return $this->db->get_where('pemesanan', ['kode_order' => $kode])->row_array();
+	}
 
 	public function update_pemesanan()
 	{

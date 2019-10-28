@@ -101,4 +101,29 @@ class Pesanan extends CI_Controller
 		$this->session->set_flashdata('flash', 'DiHapus');
 		redirect('pesanan');
 	}
+	public function laporan_pdf($kode){
+
+		$data['pesanan'] = $this->model_pemesanan->getBykode($kode);
+		$pesanan_id = $data['pesanan']['id'];
+		$queryGetquestion = "SELECT `pemesanan` .*, 
+			`costumer`.`nama` as nama_costumer, 
+			`pegawai`.`nama` as nama_pegawai,
+			`produk`.`nama` as nama_produk
+			FROM `pemesanan` 
+			JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
+			JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
+			JOIN	`produk` ON `pemesanan`.`produk_id` = `produk`. `id_produk`
+			WHERE `pemesanan`.`id` = $pesanan_id
+		";
+		$query = $this->db->query($queryGetquestion)->row_array();
+		$data['get_pesanan'] = $query;
+	
+		$this->load->library('pdf');
+	
+		$this->pdf->setPaper('A4', 'potrait');
+		$this->pdf->filename = "laporan-petanikode.pdf";
+		$this->pdf->load_view('pesanan/laporan_pdf', $data);
+	
+	
+	}
 }
