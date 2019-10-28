@@ -44,8 +44,8 @@
 									<td><?= $value['email'] ?></td>
 									<td><?= $value['alamat'] ?></td>
 									<td>
-										<a href="<?php echo base_url("costumer/edit_costumer/" . $value['id']) ?>" class="btn btn-info btn-sm ">Edit</a>
-										<a href="<?php echo base_url("costumer/hapus_costumer/" . $value['id']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('yakin?')">Hapus</a>
+										<a href="<?php echo base_url("costumer/edit_costumer/" . $value['id_costumer']) ?>" class="btn btn-info btn-sm ">Edit</a>
+										<a href="<?php echo base_url("costumer/hapus_costumer/" . $value['id_costumer']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('yakin?')">Hapus</a>
 									</td>
 
 								</tr>

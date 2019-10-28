@@ -142,11 +142,9 @@
               				</textarea>
 					</div>
 				</div>
-				<button type="button" class="btn btn-primary">SAVE</button>
-				<button type="button" class="btn btn-danger">CANCEL</button>
-
-
- 
+			</div>
+			<button type="button" class="btn btn-primary">SAVE</button>
+			<button type="button" class="btn btn-danger">CANCEL</button>
 		</form>
 	</section>
 </div>

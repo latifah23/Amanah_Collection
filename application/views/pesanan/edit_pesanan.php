@@ -15,6 +15,7 @@
 						<?= validation_errors(); ?>
 					</div>
 				<?php endif ?>
+				
 				<form action="" method="post">
 					<div class="modal-body">
 						<input type="hidden" name="id" value="<?= $pesanan['id'] ?>">
@@ -29,7 +30,11 @@
 						<div class="form-group">
 							<label>Nama Pegawai</label>
 							<select class="form-control select2" style="width: 100%;" name="pegawai_id">
+<<<<<<< HEAD
 								<option value=""><?= $get_pesanan['nama_pegawai'] ?></option>
+=======
+								<option value="" selected disabled hidden><?= $get_pesanan['nama_pegawai'] ?></option>
+>>>>>>> master
 								<?php foreach ($pegawai as $key => $value) : ?>
 									<option style="line-height: unset;" value="<?= $value['id_pegawai'] ?>"><?= $value['nama'] ?></option>
 								<?php endforeach; ?>
@@ -69,6 +74,7 @@
 						<a class="btn btn-info " href="<?= base_url('pesanan/') ?>">Kembali</a>
 						<button type="submit" class="btn btn-primary">Save changes</button>
 					</div>
+				
 				</form>
 			</div>
 		</section>

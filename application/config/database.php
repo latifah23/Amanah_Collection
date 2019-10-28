@@ -75,10 +75,15 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'mysql',
 	'username' => 'root',
+<<<<<<< HEAD
 	'password' => '',
 	'database' => 'manga_test',
+=======
+	'password' => 'root',
+	'database' => 'magang_test',
+>>>>>>> master
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
