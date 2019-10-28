@@ -65,7 +65,7 @@
 									</div>
 								</div>
 
-								
+
 								<div class="col-md-3">
 									<label>Status Transaksi</label>
 									<select class="form-control select2" style="width: 100%;" name="status">
@@ -96,13 +96,13 @@
 								<?php
 								include APPPATH . 'views/pesanan/form_celana.php';
 								?>
-							</div> 
+							</div>
 							<!-- select produk forum jaket-->
 							<div class="box box-success selected" style="display:none" id="Jaket">
 								<?php
 								include APPPATH . 'views/pesanan/form_jaket.php';
 								?>
-							</div> 
+							</div>
 							<!-- select produk forum topi-->
 							<div class="box box-success selected" style="display:none" id="Topi">
 								<?php

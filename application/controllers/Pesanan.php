@@ -12,8 +12,6 @@ class Pesanan extends CI_Controller
 		$this->load->model("model_pemesanan");
 
 		$this->load->library('form_validation');
-		
-
 	}
 	public function index()
 	{
@@ -57,7 +55,20 @@ class Pesanan extends CI_Controller
 	public function edit_pesanan($id)
 	{
 		$data['pesanan'] = $this->model_pemesanan->getByid($id);
-		// response_json($data);
+		$questions_id = $data['pesanan']['id'];
+		$queryGetquestion = "SELECT `pemesanan` .*, 
+			`costumer`.`nama` as nama_costumer, 
+			`pegawai`.`nama` as nama_pegawai,
+			`produk`.`nama` as nama_produk
+			FROM `pemesanan` 
+			JOIN `costumer` ON `pemesanan`.`costumer_id` = `costumer`. `id`
+			JOIN `pegawai`  ON `pemesanan`.`pegawai_id` = `pegawai`. `id_pegawai`
+			JOIN	`produk` ON `pemesanan`.`produk_id` = `produk`. `id_produk`
+			WHERE `pemesanan`.`id` = $questions_id
+		";
+		$query = $this->db->query($queryGetquestion)->row_array();
+		$data['get_pesanan'] = $query;
+		// response_json($query);
 		$this->form_validation->set_rules('costumer', 'Costumer', 'required');
 		$this->form_validation->set_rules('produk', 'Produk', 'required');
 		$this->form_validation->set_rules('kode_order', 'Kode_order', 'required');
@@ -67,8 +78,10 @@ class Pesanan extends CI_Controller
 		$this->form_validation->set_rules('status', 'status', 'status');
 
 
-
 		if ($this->form_validation->run() ==  FALSE) {
+			$data['produk'] = $this->model_produk->getAll();
+			$data['pegawai'] = $this->model_pegawai->getAll();
+			$data['costumer'] = $this->model_costumer->getAll();
 			$this->load->view("layouts/header");
 			$this->load->view('pesanan/edit_pesanan', $data);
 			$this->load->view("layouts/footer");
