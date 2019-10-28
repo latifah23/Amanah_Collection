@@ -53,7 +53,7 @@
 		<div class="col-md-12">
 			<div class="col-md-3">
 				<div class="form-group row">
-					<label for="input" class="col-sm-3 col-form-label"></label>
+					<label for="input" class="col-sm-3 col-form-label">Ukuran</label>
 					<div class="col-sm-7">
 					</div>
 				</div>

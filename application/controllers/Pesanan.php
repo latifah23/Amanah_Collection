@@ -27,8 +27,8 @@ class Pesanan extends CI_Controller
 
 	public function tambah_pesanan()
 	{
-		$this->form_validation->set_rules('costumer_id', 'Costumer_Id', 'required');
-		$this->form_validation->set_rules('pegawai_id', 'Pegawai_id', 'required');
+		$this->form_validation->set_rules('id_costumer', 'Id_costumer', 'required');
+		$this->form_validation->set_rules('id_pegawai', 'Id_pegawai', 'required');
 		$this->form_validation->set_rules('durasi_pemesanan', 'Durasi_Pemesanan', 'required');
 		$this->form_validation->set_rules('kode_order', 'Kode_Order', 'required');
 		$this->form_validation->set_rules('status', 'Status', 'required');
@@ -57,18 +57,34 @@ class Pesanan extends CI_Controller
 	public function edit_pesanan($id)
 	{
 		$data['pesanan'] = $this->model_pemesanan->getByid($id);
+		$questions_id = $data['pesanan']['id'];
+		$queryGetquestion = "SELECT `pemesanan` .*, 
+			`costumer`.`nama` as nama_costumer, 
+			`pegawai`.`nama` as nama_pegawai,
+			`produk`.`nama` as nama_produk
+			FROM `pemesanan` 
+			JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
+			JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
+			JOIN	`produk` ON `pemesanan`.`produk_id` = `produk`. `id_produk`
+			WHERE `pemesanan`.`id` = $questions_id
+		";
+		$query = $this->db->query($queryGetquestion)->row_array();
+		$data['get_pesanan'] = $query;
+		$this->form_validation->set_rules('pegawai', 'Pegawai', 'required');
 		// response_json($data);
 		$this->form_validation->set_rules('costumer', 'Costumer', 'required');
 		$this->form_validation->set_rules('produk', 'Produk', 'required');
 		$this->form_validation->set_rules('kode_order', 'Kode_order', 'required');
-		$this->form_validation->set_rules('pagawai', 'Pagawai', 'required');
+		$this->form_validation->set_rules('pegawai', 'Pegawai', 'required');
 		$this->form_validation->set_rules('durasi_pemesanan', 'durasi_pemesanan', 'required');
-		$this->form_validation->set_rules('pagewai', 'Pagewai', 'required');
 		$this->form_validation->set_rules('status', 'status', 'status');
 
 
 
 		if ($this->form_validation->run() ==  FALSE) {
+			$data['produk'] = $this->model_produk->getAll();
+			$data['pegawai'] = $this->model_pegawai->getAll();
+			$data['costumer'] = $this->model_costumer->getAll();
 			$this->load->view("layouts/header");
 			$this->load->view('pesanan/edit_pesanan', $data);
 			$this->load->view("layouts/footer");

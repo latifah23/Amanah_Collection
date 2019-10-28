@@ -25,9 +25,9 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label>Nama Costumer</label>
-										<select class="form-control select2" style="width: 100%;" name="costumer_id">
+										<select class="form-control select2" style="width: 100%;" name="id_costumer">
 											<?php foreach ($costumer as $key => $value) : ?>
-												<option style="line-height: unset;" value="<?= $value['id'] ?>"><?= $value['nama'] ?></option>
+												<option style="line-height: unset;" value="<?= $value['id_costumer'] ?>"><?= $value['nama'] ?></option>
 											<?php endforeach; ?>
 										</select>
 									</div>
@@ -35,7 +35,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label>Nama Pegawai</label>
-										<select class="form-control select2" style="width: 100%;" name="pegawai_id">
+										<select class="form-control select2" style="width: 100%;" name="id_pegawai">
 											<?php foreach ($pegawai as $key => $value) : ?>
 												<option style="line-height: unset;" value="<?= $value['id_pegawai'] ?>"><?= $value['nama'] ?></option>
 											<?php endforeach; ?>
@@ -92,35 +92,35 @@
 							</div>
 
 							<!-- select produk forum Celana -->
-							<div class="box box-success selected" style="display:none" id="Celana">
+							<!-- <div class="box box-success selected" style="display:none" id="Celana">
 								<?php
 								include APPPATH . 'views/pesanan/form_celana.php';
 								?>
-							</div> 
+							</div>  -->
 							<!-- select produk forum jaket-->
-							<div class="box box-success selected" style="display:none" id="Jaket">
+							<!-- <div class="box box-success selected" style="display:none" id="Jaket">
 								<?php
 								include APPPATH . 'views/pesanan/form_jaket.php';
 								?>
-							</div> 
+							</div>  -->
 							<!-- select produk forum topi-->
-							<div class="box box-success selected" style="display:none" id="Topi">
+							<!-- <div class="box box-success selected" style="display:none" id="Topi">
 								<?php
 								include APPPATH . 'views/pesanan/form_topi.php';
 								?>
-							</div>
+							</div> -->
 							<!-- select produk forum tshirt-->
-							<div class="box box-success selected" style="display:none" id="T-Shirt">
+							<!-- <div class="box box-success selected" style="display:none" id="T-Shirt">
 								<?php
 								include APPPATH . 'views/pesanan/form_tshirt.php';
 								?>
-							</div>
+							</div> -->
 							<!-- select produk forum PDL-->
-							<div class="box box-success selected" style="display:none" id="PDL">
+							<!-- <div class="box box-success selected" style="display:none" id="PDL">
 								<?php
 								include APPPATH . 'views/pesanan/form_pdl.php';
 								?>
-							</div>
+							</div> -->
 
 
 							<!-- jika kosong select produk-->

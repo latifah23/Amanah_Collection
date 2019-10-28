@@ -11,8 +11,8 @@ class Model_pemesanan extends CI_Model
 		`pegawai`.`nama` as nama_pegawai,
 		`produk`.`nama` as nama_produk
 		FROM `pemesanan` 
-		JOIN `costumer` ON `pemesanan`.`costumer_id` = `costumer`. `id`
-		JOIN `pegawai`  ON `pemesanan`.`pegawai_id` = `pegawai`. `id_pegawai`
+		JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
+		JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
 		JOIN	`produk` ON `pemesanan`.`produk_id` = `produk`. `id_produk`
 		ORDER BY `pemesanan`.`id` DESC";
 		return $this->db->query($pemesananQuery)->result_array();
@@ -43,8 +43,8 @@ class Model_pemesanan extends CI_Model
 	{
 		$post = $this->input->post();
 		$data = array(
-			"pegawai_id" 			=> $post["pegawai_id"],
-			"costumer_id" 			=> $post["costumer_id"],
+			"id_pegawai" 			=> $post["id_pegawai"],
+			"id_costumer" 			=> $post["id_costumer"],
 			"durasi_pemesanan" 		=> $post["durasi_pemesanan"],
 			"kode_order" 			=> $post["kode_order"],
 			"status" 				=> $post["status"],
@@ -80,8 +80,8 @@ class Model_pemesanan extends CI_Model
 	{
 		$post = $this->input->post();
 		$data = array(
-			"pegawai_id" 			=> $post["pegawai_id"],
-			"costumer_id" 			=> $post["costumer_id"],
+			"id_pegawai" 			=> $post["id_pegawai"],
+			"id_costumer" 			=> $post["id_costumer"],
 			"durasi_pemesanan" 		=> $post["durasi_pemesanan"],
 			"kode_order" 			=> $post["kode_order"],
 			"status" 				=> $post["status"],

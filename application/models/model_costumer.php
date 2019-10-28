@@ -23,18 +23,18 @@ class Model_costumer extends CI_Model
 	}
 
 
-	function hapus_costumer($id)
+	function hapus_costumer($id_costumer)
 	{
 		//produces:
 		//WHERE id_nomor008 = $id
-		$this->db->where('id', $id);
+		$this->db->where('id', $id_costumer);
 		//DELETE FORM mytable
 		$this->db->delete("costumer");
 	}
 
-	public function getByid($id)
+	public function getByid($id_costumer)
 	{
-		return $this->db->get_where('costumer', ['id' => $id])->row_array();
+		return $this->db->get_where('costumer', ['id' => $id_costumer])->row_array();
 	}
 
 
