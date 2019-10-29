@@ -1,3 +1,34 @@
+
+//function ajax 
+$(function() {
+	$(".tampilUbah").on("click", function() {
+		// $("#modalLable").html("Edit User");
+		// $(".modal-footer  button[type=submit]").html("Edit User");
+		// $(".custom-modal-text form").attr('action', "user/update");
+
+		const id = $(this).data("id");
+		
+		$.ajax({
+			url:"pesanan/get_edit_pesanan",
+			data:{id : id},
+			method: "POST",
+			dataType: 'json',
+			
+			success: function(data){
+				$('#kode_order').val(data.kode_order);
+				$('#costumer_id').val(data.nama_costumer);
+				$('#pegawai_id').val(data.nama_pegawai);
+				$('#produk_id').val(data.nama_produk);
+				$('#durasi_pemesanan').val(data.durasi_pemesanan);
+				$('#jenis_kain').val(data.jenis_kain);
+				$('#warna').val(data.warna);
+				$('#keterangan').val(data.keterangan);
+				// console.log(data);
+			}
+		});
+	});
+});
+
 $(function() {
 	// if ($(this).html() == "") {
 	// .find('option').each(function()
