@@ -116,7 +116,7 @@ class Pesanan extends CI_Controller
 		$data['pesanan'] = $this->model_pemesanan->getBykode($kode);
 		$pesanan_id = $data['pesanan']['id'];
 		$queryGetquestion = "SELECT `pemesanan` .*, 
-			`costumer`.`nama` as nama_costumer, 
+			`costumer`.`nama` as nama_costumer,`costumer`.`alamat`as alamat_costumer,`costumer`.`notelp`as notelp_costumer,`costumer`.`email` as email_costumer, 
 			`pegawai`.`nama` as nama_pegawai,
 			`produk`.`nama` as nama_produk
 			FROM `pemesanan` 
