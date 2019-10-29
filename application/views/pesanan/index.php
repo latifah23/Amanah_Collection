@@ -99,14 +99,18 @@
 											</div>
 											<div class="form-group">
 												<label for="costumer">Costumer</label>
-												<input type="text" class="form-control" id="costumer_id" name="costumer_id" ">
+												<select class="form-control" name="id_costumer" id="id_costumer" >
+													<?php foreach ($costumer as $key => $value) : ?>
+														<option value="<?= $value['id_costumer'] ?>"><?= $value['nama'] ?></option>
+													<?php endforeach ?>
+												</select>
 											</div>
 											<div class="form-group">
 												<label>Nama Pegawai</label>
-												<select class="form-control select2" style="width: 100%;" name="pegawai_id" id="pegawai_id">
+												<select class="form-control" name="id_pegawai" id="id_pegawai" >
 													<?php foreach ($pegawai as $key => $value) : ?>
-														<option style="line-height: unset;" value="<?= $value['id_pegawai'] ?>"><?= $value['nama'] ?></option>
-													<?php endforeach; ?>
+														<option value="<?= $value['id_pegawai'] ?>"><?= $value['nama'] ?></option>
+													<?php endforeach ?>
 												</select>
 											</div>
 											<div class="form-group">

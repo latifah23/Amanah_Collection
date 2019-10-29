@@ -17,7 +17,9 @@ class Pesanan extends CI_Controller
 	}
 	public function index()
 	{
-
+		$data['produk'] = $this->model_produk->getAll();
+		$data['pegawai'] = $this->model_pegawai->getAll();
+		$data['costumer'] = $this->model_costumer->getAll();
 		$data['pemesanan'] = $this->model_pemesanan->getAll();
 		$this->load->view('layouts/header');
 		$this->load->view('pesanan/index', $data);
