@@ -47,7 +47,7 @@ class Model_costumer extends CI_Model
 			'notelp' 		=> $post["notelp"],
 			'email'		=> $post["email"],
 		);
-		$this->db->where('id', $this->input->post('id'));
+		$this->db->where('id_costumer', $this->input->post('id_costumer'));
 		$this->db->update('costumer', $data);
 	}
 }

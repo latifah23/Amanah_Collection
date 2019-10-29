@@ -86,11 +86,11 @@ class Model_pemesanan extends CI_Model
 			"kode_order" 			=> $post["kode_order"],
 			"status" 				=> $post["status"],
 			"produk_id" 			=> $post["produk_id"],
-			"jenis_kain" 			=> $post["jenis_kain"],
-			"warna" 				=> $post["warna"],
-			"jumlah_pemesanan" 		=> $post["jumlah_pemesanan"],
-			"jenis_sablon"			=> $post["jenis_sablon"],
-			"keterangan" 			=> $post["keterangan"]
+			// "jenis_kain" 			=> $post["jenis_kain"],
+			// "warna" 				=> $post["warna"],
+			// "jumlah_pemesanan" 		=> $post["jumlah_pemesanan"],
+			// "jenis_sablon"			=> $post["jenis_sablon"],
+			// "keterangan" 			=> $post["keterangan"]
 		);
 		$this->db->where('id', $this->input->post('id'));
 		$this->db->update('pemesanan', $data);

@@ -54,10 +54,10 @@ class Pesanan extends CI_Controller
 		}
 	}
 
-	public function edit_pesanan($id)
+	public function edit_pesanan($id = null)
 	{
-		$data['pesanan'] = $this->model_pemesanan->getByid($id);
-		$questions_id = $data['pesanan']['id'];
+		$data['pemesanan'] = $this->model_pemesanan->getByid($id);
+		$questions_id = $data['pemesanan']['id'];
 		$queryGetquestion = "SELECT `pemesanan` .*, 
 			`costumer`.`nama` as nama_costumer, 
 			`pegawai`.`nama` as nama_pegawai,
@@ -70,12 +70,10 @@ class Pesanan extends CI_Controller
 		";
 		$query = $this->db->query($queryGetquestion)->row_array();
 		$data['get_pesanan'] = $query;
-		$this->form_validation->set_rules('pegawai', 'Pegawai', 'required');
-		// response_json($data);
-		$this->form_validation->set_rules('costumer', 'Costumer', 'required');
-		$this->form_validation->set_rules('produk', 'Produk', 'required');
+		$this->form_validation->set_rules('id_pegawai', 'Id_pegawai', 'required');
+		$this->form_validation->set_rules('id_costumer', 'Id_costumer', 'required');
+		$this->form_validation->set_rules('produk_id', 'Produk_id', 'required');
 		$this->form_validation->set_rules('kode_order', 'Kode_order', 'required');
-		$this->form_validation->set_rules('pegawai', 'Pegawai', 'required');
 		$this->form_validation->set_rules('durasi_pemesanan', 'durasi_pemesanan', 'required');
 		$this->form_validation->set_rules('status', 'status', 'status');
 
@@ -89,7 +87,7 @@ class Pesanan extends CI_Controller
 			$this->load->view('pesanan/edit_pesanan', $data);
 			$this->load->view("layouts/footer");
 		} else {
-			$this->model_pemesanan->update_pesanan();
+			$this->model_pemesanan->update_pemesanan();
 			$this->session->set_flashdata('flash', 'Diupdate');
 			redirect('pesanan');
 		}
