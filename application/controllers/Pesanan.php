@@ -15,7 +15,9 @@ class Pesanan extends CI_Controller
 	}
 	public function index()
 	{
-
+		$data['produk'] = $this->model_produk->getAll();
+		$data['pegawai'] = $this->model_pegawai->getAll();
+		$data['costumer'] = $this->model_costumer->getAll();
 		$data['pemesanan'] = $this->model_pemesanan->getAll();
 		$this->load->view('layouts/header');
 		$this->load->view('pesanan/index', $data);
@@ -52,8 +54,10 @@ class Pesanan extends CI_Controller
 		}
 	}
 
-	public function edit_pesanan($id)
+	public function get_edit_pesanan()
 	{
+		$id = $this->input->post('id', TRUE);
+		$data = $this->model_pemesanan->getByid($id);
 		$data['pesanan'] = $this->model_pemesanan->getByid($id);
 		$questions_id = $data['pesanan']['id'];
 		$queryGetquestion = "SELECT `pemesanan` .*, 
@@ -68,25 +72,28 @@ class Pesanan extends CI_Controller
 		";
 		$query = $this->db->query($queryGetquestion)->row_array();
 		$data['get_pesanan'] = $query;
-		$this->form_validation->set_rules('pegawai', 'Pegawai', 'required');
+		echo json_encode($data['get_pesanan']);
 		// response_json($data);
-		$this->form_validation->set_rules('costumer', 'Costumer', 'required');
-		$this->form_validation->set_rules('produk', 'Produk', 'required');
-		$this->form_validation->set_rules('kode_order', 'Kode_order', 'required');
-		$this->form_validation->set_rules('pegawai', 'Pegawai', 'required');
-		$this->form_validation->set_rules('durasi_pemesanan', 'durasi_pemesanan', 'required');
-		$this->form_validation->set_rules('status', 'status', 'status');
 
+	}
 
+	public function update_pesanan()
+	{
+		$this->form_validation->set_rules('id_costumer', 'Id_costumer', 'required');
+		$this->form_validation->set_rules('id_pegawai', 'Id_pegawai', 'required');
+		$this->form_validation->set_rules('durasi_pemesanan', 'Durasi_Pemesanan', 'required');
+		$this->form_validation->set_rules('kode_order', 'Kode_Order', 'required');
+		// $this->form_validation->set_rules('status', 'Status', 'required');
+		// $this->form_validation->set_rules('produk_id', 'produk_id', 'required');
+		$this->form_validation->set_rules('jenis_kain', 'Jenis_Kain', 'required');
+		$this->form_validation->set_rules('warna', 'Warna', 'required');
+		// $this->form_validation->set_rules('jumlah_pemesanan', 'Jumlah_Pemesanan', 'required');
+		$this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
+		// $this->form_validation->set_rules('jenis_sablon', 'jenis_sablon', 'required');
 		if ($this->form_validation->run() ==  FALSE) {
-			$data['produk'] = $this->model_produk->getAll();
-			$data['pegawai'] = $this->model_pegawai->getAll();
-			$data['costumer'] = $this->model_costumer->getAll();
-			$this->load->view("layouts/header");
-			$this->load->view('pesanan/edit_pesanan', $data);
-			$this->load->view("layouts/footer");
+			redirect('pesanan');
 		} else {
-			$this->model_pemesanan->update_pesanan();
+			$this->model_pemesanan->update_pemesanan();
 			$this->session->set_flashdata('flash', 'Diupdate');
 			redirect('pesanan');
 		}
@@ -104,7 +111,7 @@ class Pesanan extends CI_Controller
 		$data['pesanan'] = $this->model_pemesanan->getBykode($kode);
 		$pesanan_id = $data['pesanan']['id'];
 		$queryGetquestion = "SELECT `pemesanan` .*, 
-			`costumer`.`nama` as nama_costumer, 
+			`costumer`.`nama` as nama_costumer,`costumer`.`alamat`as alamat_costumer,`costumer`.`notelp`as notelp_costumer,`costumer`.`email` as email_costumer, 
 			`pegawai`.`nama` as nama_pegawai,
 			`produk`.`nama` as nama_produk
 			FROM `pemesanan` 

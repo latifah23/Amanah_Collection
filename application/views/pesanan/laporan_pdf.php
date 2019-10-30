@@ -99,34 +99,31 @@
 			<table class="table table-striped">
 			<thead>
 				<td>
-					<div class="col-sm-4 invoice-col">
+					<div class="col-sm-5 invoice-col">
 						From
-						<address>
+						<br>
 						<strong><?=$get_pesanan['nama_pegawai']?></strong><br>
-						795 Folsom Ave, Suite 600<br>
-						San Francisco, CA 94107<br>
+						Yogyakarta, CA 94107<br>
 						Phone: (804) 123-5432<br>
-						Email: info@almasaeedstudio.com
-						</address>
+						Email: ondozwahyudi@gmail.com
+						
 					</div>
 				</td>
 				
 				<td>
 					<!-- /.col -->
-					<div class="col-sm-4 invoice-col">
+					<div class="col-sm-5 invoice-col">
 						To
-						<address>
+						<br>
 						<strong><?=$get_pesanan['nama_costumer'] ?></strong><br>
-						795 Folsom Ave, Suite 600<br>
-						San Francisco, CA 94107<br>
-						Phone: (555) 539-1037<br>
-						Email: john.doe@example.com
-						</address>
+						<?=$get_pesanan['alamat_costumer'] ?>, CA 13351<br>
+						<b>Phone:</b><?=$get_pesanan['notelp_costumer'] ?><br>
+						<b>Email:</b><?=$get_pesanan['email_costumer'] ?>						
 					</div>
 				</td>
-				<td>
+				<td >
 
-					<div class="col-sm-4 invoice-col">
+					<div class="col-sm-2 invoice-col" style="margin-left:100px">
 						<b>Invoice #007612</b><br>
 						<br>
 						<b>Order ID:</b> 4F3S8J<br>
@@ -192,32 +189,20 @@
 			<!-- /.row -->
 		
 		 <div class="row">		   <!-- /.col -->
-		   <div class="col-xs-6">
-			<p class="lead">Amount Due 2/22/2014</p>
-	
-			<div class="table-responsive">
-			  <table class="table">
-			    <tr>
-				 <th style="width:50%">Subtotal:</th>
-				 <td>$250.30</td>
-			    </tr>
-			    <tr>
-				 <th>Tax (9.3%)</th>
-				 <td>$10.34</td>
-			    </tr>
-			    <tr>
-				 <th>Shipping:</th>
-				 <td>$5.80</td>
-			    </tr>
-			    <tr>
-				 <th>Total:</th>
-				 <td>$265.24</td>
-			    </tr>
-			  </table>
+		   <div class="col-xs-6 " style=" text-align: right;">
+			<p class="lead" >Amount Due 2/22/2014</p>
+				<b style="margin-right:100px">Subtotal: </b>
+				$250.30
+				<br>			 
+				<b style="margin-right:110px">Total: </b>
+				$10.34
+				<br>
+							   
+			
 			</div>
 		   </div>
 		   <!-- /.col -->
-		 </div>
+		
 		 <!-- /.row -->
 	</div>
         </main>

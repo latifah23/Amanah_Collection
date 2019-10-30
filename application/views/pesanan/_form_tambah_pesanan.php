@@ -96,21 +96,13 @@
 								<?php
 								include APPPATH . 'views/pesanan/form_celana.php';
 								?>
-<<<<<<< HEAD
-							</div>
-=======
 							</div>  -->
->>>>>>> master
 							<!-- select produk forum jaket-->
 							<!-- <div class="box box-success selected" style="display:none" id="Jaket">
 								<?php
 								include APPPATH . 'views/pesanan/form_jaket.php';
 								?>
-<<<<<<< HEAD
-							</div>
-=======
 							</div>  -->
->>>>>>> master
 							<!-- select produk forum topi-->
 							<!-- <div class="box box-success selected" style="display:none" id="Topi">
 								<?php
