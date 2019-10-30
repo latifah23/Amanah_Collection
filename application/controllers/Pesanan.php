@@ -61,24 +61,15 @@ class Pesanan extends CI_Controller
 			`pegawai`.`nama` as nama_pegawai,
 			`produk`.`nama` as nama_produk
 			FROM `pemesanan` 
-<<<<<<< HEAD
-			JOIN `costumer` ON `pemesanan`.`costumer_id` = `costumer`. `id`
-			JOIN `pegawai`  ON `pemesanan`.`pegawai_id` = `pegawai`. `id_pegawai`
-=======
 			JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
 			JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
->>>>>>> master
 			JOIN	`produk` ON `pemesanan`.`produk_id` = `produk`. `id_produk`
 			WHERE `pemesanan`.`id` = $questions_id
 		";
 		$query = $this->db->query($queryGetquestion)->row_array();
 		$data['get_pesanan'] = $query;
-<<<<<<< HEAD
-		// response_json($query);
-=======
 		$this->form_validation->set_rules('pegawai', 'Pegawai', 'required');
 		// response_json($data);
->>>>>>> master
 		$this->form_validation->set_rules('costumer', 'Costumer', 'required');
 		$this->form_validation->set_rules('produk', 'Produk', 'required');
 		$this->form_validation->set_rules('kode_order', 'Kode_order', 'required');
@@ -107,7 +98,8 @@ class Pesanan extends CI_Controller
 		$this->session->set_flashdata('flash', 'DiHapus');
 		redirect('pesanan');
 	}
-	public function laporan_pdf($kode){
+	public function laporan_pdf($kode)
+	{
 
 		$data['pesanan'] = $this->model_pemesanan->getBykode($kode);
 		$pesanan_id = $data['pesanan']['id'];
@@ -123,13 +115,11 @@ class Pesanan extends CI_Controller
 		";
 		$query = $this->db->query($queryGetquestion)->row_array();
 		$data['get_pesanan'] = $query;
-	
+
 		$this->load->library('pdf');
-	
+
 		$this->pdf->setPaper('A4', 'potrait');
 		$this->pdf->filename = "laporan-petanikode.pdf";
 		$this->pdf->load_view('pesanan/laporan_pdf', $data);
-	
-	
 	}
 }
