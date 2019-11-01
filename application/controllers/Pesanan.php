@@ -35,7 +35,6 @@ class Pesanan extends CI_Controller
 		$this->form_validation->set_rules('produk_id', 'produk_id', 'required');
 		$this->form_validation->set_rules('jenis_kain', 'Jenis_Kain', 'required');
 		$this->form_validation->set_rules('warna', 'Warna', 'required');
-		$this->form_validation->set_rules('jumlah_pemesanan', 'Jumlah_Pemesanan', 'required');
 		$this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
 		$this->form_validation->set_rules('jenis_sablon', 'jenis_sablon', 'required');
 
@@ -57,21 +56,41 @@ class Pesanan extends CI_Controller
 	public function get_edit_pesanan()
 	{
 		$id = $this->input->post('id', TRUE);
-		$data = $this->model_pemesanan->getByid($id);
 		$data['pesanan'] = $this->model_pemesanan->getByid($id);
 		$questions_id = $data['pesanan']['id'];
-		$queryGetquestion = "SELECT `pemesanan` .*, 
+		$queryGetpesanan = "SELECT `pemesanan` .*, 
 			`costumer`.`nama` as nama_costumer, 
 			`pegawai`.`nama` as nama_pegawai,
-			`produk`.`nama` as nama_produk
+			`produk`.`nama` as nama_produk,
+			`ukuran`.`xs_pendek`as ukuran_xs_pendek,
+			`ukuran`.`xs_panjang`as ukuran_xs_panjang,
+			`ukuran`.`s_pendek`as ukuran_s_pendek,
+			`ukuran`.`s_panjang`as ukuran_s_panjang,
+			`ukuran`.`m_pendek`as ukuran_m_pendek,
+			`ukuran`.`m_panjang`as ukuran_m_panjang,
+			`ukuran`.`l_pendek`as ukuran_l_pendek,
+			`ukuran`.`l_panjang`as ukuran_l_panjang,
+			`ukuran`.`xl_pendek`as ukuran_xl_pendek,
+			`ukuran`.`xl_panjang`as ukuran_xl_panjang,
+			`ukuran`.`xxl_pendek`as ukuran_xxl_pendek,
+			`ukuran`.`xxl_panjang`as ukuran_xxl_panjang,
+			`ukuran`.`xxxl_pendek`as ukuran_xxxl_pendek,
+			`ukuran`.`xxxl_panjang`as ukuran_xxxl_panjang,
+			`ukuran`.`jumbo_pendek`as ukuran_jumbo_pendek,
+			`ukuran`.`jumbo_panjang`as ukuran_jumbo_panjang,
+			`ukuran`.`jumlah` as jumlah
 			FROM `pemesanan` 
 			JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
 			JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
 			JOIN	`produk` ON `pemesanan`.`produk_id` = `produk`. `id_produk`
+			JOIN `ukuran`	ON $questions_id = `ukuran`.`pemesanan_id` 	
 			WHERE `pemesanan`.`id` = $questions_id
 		";
-		$query = $this->db->query($queryGetquestion)->row_array();
-		$data['get_pesanan'] = $query;
+
+		$query_pesanan = $this->db->query($queryGetpesanan)->row_array();
+		// $query_ukuran = $this->db->query($queryGetukuran)->row_array();
+		$data['get_pesanan'] = $query_pesanan;
+		// $data['get_ukuran']	= $query_ukuran;
 		echo json_encode($data['get_pesanan']);
 		// response_json($data);
 
