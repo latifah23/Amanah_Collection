@@ -65,7 +65,7 @@
 									</div>
 								</div>
 
-								
+
 								<div class="col-md-3">
 									<label>Status Transaksi</label>
 									<select class="form-control select2" style="width: 100%;" name="status">

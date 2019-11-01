@@ -52,9 +52,9 @@ class Pegawai extends CI_Controller
 		}
 	}
 
-	function hapus_pegawai($id)
+	function hapus_pegawai($id_pegawai)
 	{
-		$this->model_pegawai->hapus_pegawai($id);
+		$this->model_pegawai->hapus_pegawai($id_pegawai);
 		$this->session->set_flashdata('flash', 'DiHapus');
 		redirect("pegawai");
 	}

@@ -27,7 +27,7 @@ class Model_costumer extends CI_Model
 	{
 		//produces:
 		//WHERE id_nomor008 = $id
-		$this->db->where('id', $id_costumer);
+		$this->db->where('id_costumer', $id_costumer);
 		//DELETE FORM mytable
 		$this->db->delete("costumer");
 	}

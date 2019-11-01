@@ -51,9 +51,9 @@ class Costumer extends CI_Controller
 		}
 	}
 
-	function hapus_costumer($id)
+	function hapus_costumer($id_costumer)
 	{
-		$this->model_costumer->hapus_costumer($id);
+		$this->model_costumer->hapus_costumer($id_costumer);
 		$this->session->set_flashdata('flash', 'DiHapus');
 		redirect('costumer');
 	}
