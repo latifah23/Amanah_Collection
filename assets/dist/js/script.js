@@ -17,7 +17,7 @@ $(function() {
 				$("#kode_order").val(data.kode_order);
 				$("#id_costumer").val(data.id_costumer);
 				$("#id_pegawai").val(data.id_pegawai);
-				$("#produk_id").val(data.nama_produk);
+				$("#id_produk").val(data.nama_produk);
 				$("#durasi_pemesanan").val(data.durasi_pemesanan);
 				$("#jenis_kain").val(data.jenis_kain);
 				$("#warna").val(data.warna);
@@ -40,7 +40,7 @@ $(function() {
 				$("#status").val(data.status);
 				$("#keterangan").val(data.keterangan);
 				$("#id").val(data.id);
-				// console.log(data);
+				console.log(data);
 			}
 		});
 	});

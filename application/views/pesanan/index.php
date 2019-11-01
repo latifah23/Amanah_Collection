@@ -83,8 +83,6 @@
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane active" id="tab_1-1">
-
-
 									<?php if (validation_errors()) : ?>
 										<div class="alert alert-danger" role="alert">
 											<?= validation_errors(); ?>
@@ -115,7 +113,11 @@
 											</div>
 											<div class="form-group">
 												<label for="produk">Produk</label>
-												<input type="text" class="form-control" id="produk_id" name="produk_id">
+												<select class="form-control" id="id_produk" name="id_produk">
+													<?php foreach ($produk as $key => $value) : ?>
+														<option value="<?= $value['id_produk'] ?>"><?= $value['nama'] ?></option>
+													<?php endforeach ?>
+												</select>
 											</div>
 											<div class="form-group">
 												<label for="durasi_pemesanan">Durasi Pemesanan</label>
@@ -240,7 +242,6 @@
 					<!-- /.col -->
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>

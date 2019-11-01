@@ -32,7 +32,7 @@ class Pesanan extends CI_Controller
 		$this->form_validation->set_rules('durasi_pemesanan', 'Durasi_Pemesanan', 'required');
 		$this->form_validation->set_rules('kode_order', 'Kode_Order', 'required');
 		$this->form_validation->set_rules('status', 'Status', 'required');
-		$this->form_validation->set_rules('produk_id', 'produk_id', 'required');
+		$this->form_validation->set_rules('id_produk', 'Id_produk', 'required');
 		$this->form_validation->set_rules('jenis_kain', 'Jenis_Kain', 'required');
 		$this->form_validation->set_rules('warna', 'Warna', 'required');
 		$this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
@@ -82,7 +82,7 @@ class Pesanan extends CI_Controller
 			FROM `pemesanan` 
 			JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
 			JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
-			JOIN	`produk` ON `pemesanan`.`produk_id` = `produk`. `id_produk`
+			JOIN	`produk` ON `pemesanan`.`id_produk` = `produk`. `id_produk`
 			JOIN `ukuran`	ON $questions_id = `ukuran`.`pemesanan_id` 	
 			WHERE `pemesanan`.`id` = $questions_id
 		";
@@ -103,7 +103,7 @@ class Pesanan extends CI_Controller
 		$this->form_validation->set_rules('durasi_pemesanan', 'Durasi_Pemesanan', 'required');
 		$this->form_validation->set_rules('kode_order', 'Kode_Order', 'required');
 		// $this->form_validation->set_rules('status', 'Status', 'required');
-		// $this->form_validation->set_rules('produk_id', 'produk_id', 'required');
+		// $this->form_validation->set_rules('id_produk', 'id_produk', 'required');
 		$this->form_validation->set_rules('jenis_kain', 'Jenis_Kain', 'required');
 		$this->form_validation->set_rules('warna', 'Warna', 'required');
 		// $this->form_validation->set_rules('jumlah_pemesanan', 'Jumlah_Pemesanan', 'required');
@@ -136,7 +136,7 @@ class Pesanan extends CI_Controller
 			FROM `pemesanan` 
 			JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
 			JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
-			JOIN	`produk` ON `pemesanan`.`produk_id` = `produk`. `id_produk`
+			JOIN	`produk` ON `pemesanan`.`id_produk` = `produk`. `id_produk`
 			WHERE `pemesanan`.`id` = $pesanan_id
 		";
 		$query = $this->db->query($queryGetquestion)->row_array();

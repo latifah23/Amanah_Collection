@@ -13,7 +13,7 @@ class Model_pemesanan extends CI_Model
 		FROM `pemesanan` 
 		JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
 		JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
-		JOIN	`produk` ON `pemesanan`.`produk_id` = `produk`. `id_produk`
+		JOIN	`produk` ON `pemesanan`.`id_produk` = `produk`. `id_produk`
 		ORDER BY `pemesanan`.`id` DESC";
 		return $this->db->query($pemesananQuery)->result_array();
 	}
@@ -48,7 +48,7 @@ class Model_pemesanan extends CI_Model
 			"durasi_pemesanan" 		=> $post["durasi_pemesanan"],
 			"kode_order" 			=> $post["kode_order"],
 			"status" 				=> $post["status"],
-			"produk_id" 			=> $post["produk_id"],
+			"id_produk" 			=> $post["id_produk"],
 			"jenis_kain" 			=> $post["jenis_kain"],
 			"warna" 				=> $post["warna"],
 			"jenis_sablon"			=> $post["jenis_sablon"],

@@ -197,8 +197,6 @@
 				<b style="margin-right:110px">Total: </b>
 				$10.34
 				<br>
-							   
-			
 			</div>
 		   </div>
 		   <!-- /.col -->
