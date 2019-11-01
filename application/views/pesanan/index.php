@@ -83,8 +83,6 @@
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane active" id="tab_1-1">
-
-
 									<?php if (validation_errors()) : ?>
 										<div class="alert alert-danger" role="alert">
 											<?= validation_errors(); ?>
@@ -115,7 +113,11 @@
 											</div>
 											<div class="form-group">
 												<label for="produk">Produk</label>
-												<input type="text" class="form-control" id="produk_id" name="produk_id">
+												<select class="form-control" id="id_produk" name="id_produk">
+													<?php foreach ($produk as $key => $value) : ?>
+														<option value="<?= $value['id_produk'] ?>"><?= $value['nama'] ?></option>
+													<?php endforeach ?>
+												</select>
 											</div>
 											<div class="form-group">
 												<label for="durasi_pemesanan">Durasi Pemesanan</label>
@@ -129,18 +131,89 @@
 												<label for="kode_order">Warna </label>
 												<input type="text" class="form-control" id="warna" name="warna">
 											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="col-md-3">
+														<div class="form-group row">
+															<label for="input" class="col-sm-3 col-form-label">Ukuran</label>
+															<div class="col-sm-7">
+															</div>
+														</div>
+
+													</div>
+													<div class="col-md-3">
+														<div class="form-group row">
+															<label for="input" class="col-sm-3 col-form-label">XS</label>
+															<div class="col-sm-7">
+																<input type="text" class="form-control" id="xs_pendek" placeholder="pendek">
+																<input type="text" class="form-control" id="xs_panjang" placeholder="panjang"><br>
+															</div>
+
+
+															<label for="input" class="col-sm-3 col-form-label">L</label>
+															<div class="col-sm-7">
+																<input type="text" class="form-control" id="l_pendek" placeholder="pendek">
+																<input type="text" class="form-control" id="l_panjang" placeholder="panjang"><br>
+															</div>
+
+															<label for="input" class="col-sm-3 col-form-label">XXXL</label>
+															<div class="col-sm-7">
+																<input type="text" class="form-control" id="xxxl_pendek" placeholder="pendek">
+																<input type="text" class="form-control" id="xxxl_panjang" placeholder="panjang"><br>
+															</div>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="form-group row">
+															<label for="input" class="col-sm-3 col-form-label">S</label>
+															<div class="col-sm-7">
+																<input type="text" class="form-control" id="s_pendek" placeholder="pendek">
+																<input type="text" class="form-control" id="s_panjang" placeholder="panjang"><br>
+															</div>
+
+															<label for="input" class="col-sm-3 col-form-label">XL</label>
+															<div class="col-sm-7">
+																<input type="text" class="form-control" id="xl_pendek" placeholder="pendek">
+																<input type="text" class="form-control" id="xl_panjang" placeholder="panjang"><br>
+															</div>
+
+															<label for="input" class="col-sm-3 col-form-label">Jumbo</label>
+															<div class="col-sm-7">
+																<input type="text" class="form-control" id="jumbo_pendek" placeholder="pendek">
+																<input type="text" class="form-control" id="jumbo_panjang" placeholder="panjang"><br>
+															</div>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="form-group row">
+															<label for="input" class="col-sm-3 col-form-label">M</label>
+															<div class="col-sm-7">
+																<input type="text" class="form-control" id="m_pendek" placeholder="pendek">
+																<input type="text" class="form-control" id="m_panjang" placeholder="panjang"><br>
+															</div>
+
+															<label for="input" class="col-sm-3 col-form-label">XXL</label>
+															<div class="col-sm-7">
+																<input type="text" class="form-control" id="xxl_pendek" placeholder="pendek">
+																<input type="text" class="form-control" id="xxl_panjang" placeholder="panjang"><br>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 											<div class="form-group">
 												<label for="kode_order">Keterangan</label>
-												<input type="text" class="form-control" id="keterangan" name="keterangan">
+												<textarea type="text" class="form-control" id="keterangan" name="keterangan"></textarea>
 											</div>
-											<!-- <div class="form-group">
-												<label for="status">status</label>
-												<?php if ($pesanan['status'] == 1) : ?>
-													<span style="margin-left:10px" class="label label-success">Selsai</span>
-												<?php else : ?>
-													<span style="margin-left:10px" class="label label-danger">Proses</span>
-												<?php endif; ?>
-											</div> -->
+											<div class="form-group">
+												<label>Status</label>
+												<select class="form-control" name="status" id="status">
+													<option value="0">Proses</option>
+													<option value="1">Selesai</option>
+												</select>
+											</div>
 											<div class="modal-footer">
 												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 												<button type="submit" class="btn btn-primary">Save changes</button>
@@ -169,7 +242,6 @@
 					<!-- /.col -->
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>

@@ -39,13 +39,6 @@
 					</div>
 				</div>
 
-				<div class="form-group row">
-					<label for="input" class="col-sm-3 col-form-label">Jumlah</label>
-					<div class="col-sm-7">
-						<input type="text" class="form-control" id="input" placeholder="Jumlah" name="jumlah_pemesanan">
-					</div>
-				</div>
-
 			</div>
 	</div>
 
@@ -147,7 +140,6 @@
 				<label for="message" class="col-sm-3 col-form-label">Keterangan</label>
 				<div class="col-sm-7">
 					<textarea id="note_1_1" name="keterangan" class="form-control" placeholder="Keterangan Pekerjaan"></textarea>
-					</textarea>
 				</div>
 			</div>
 		</div>
