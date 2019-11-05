@@ -17,6 +17,7 @@
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
+								<th>No</th>
 								<th>Kode Order</th>
 								<th>Costumer</th>
 								<th>Produk</th>
@@ -27,8 +28,10 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php $i = 1 ?>
 							<?php foreach ($pemesanan as $key => $value) : ?>
 								<tr>
+									<td><?= $i++ ?></td>
 									<td><?= $value['kode_order'] ?></td>
 									<td><?= $value['nama_costumer'] ?></td>
 									<td><?= $value['nama_produk'] ?></td>
@@ -146,7 +149,7 @@
 																<input type="text" class="form-control" id="xs_pendek" placeholder="pendek">
 																<input type="text" class="form-control" id="xs_panjang" placeholder="panjang"><br>
 															</div>
-															
+
 															<label for="input" class="col-sm-3 col-form-label">L</label>
 															<div class="col-sm-7">
 																<input type="text" class="form-control" id="l_pendek" placeholder="pendek">

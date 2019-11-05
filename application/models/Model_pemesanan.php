@@ -17,6 +17,22 @@ class Model_pemesanan extends CI_Model
 		ORDER BY `pemesanan`.`id` DESC";
 		return $this->db->query($pemesananQuery)->result_array();
 	}
+
+	public function riwayat()
+	{
+		$riwayatQuery = "SELECT `pemesanan` .*, 
+		`costumer`.`nama` as nama_costumer, 
+		`pegawai`.`nama` as nama_pegawai,
+		`produk`.`nama` as nama_produk
+		FROM `pemesanan` 
+		JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
+		JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
+		JOIN	`produk` ON `pemesanan`.`id_produk` = `produk`. `id_produk`
+		WHERE `pemesanan`.`status` = '1'
+		ORDER BY `pemesanan`.`id` DESC
+		";
+		return $this->db->query($riwayatQuery)->result_array();
+	}
 	public function cekkodeorder()
 	{
 		//keterangan 
@@ -55,10 +71,29 @@ class Model_pemesanan extends CI_Model
 			"keterangan" 			=> $post["keterangan"]
 		);
 		$this->db->insert('pemesanan', $data);
+		$pemesanan_id = $this->db->insert_id();
 		$ukuran = array(
-			// "id_pemesanan" 	=> $this->db->/
+			'pemesanan_id' => $pemesanan_id,
+			"xs_pendek" => $post["xs_pendek"],
+			"xs_panjang" => $post["xs_panjang"],
+			"s_pendek" => $post["s_pendek"],
+			"s_panjang" => $post["s_panjang"],
+			"l_pendek" => $post["l_pendek"],
+			"l_panjang" => $post["l_panjang"],
+			"xxxl_pendek" => $post["xxxl_pendek"],
+			"xxxl_panjang" => $post["xxxl_panjang"],
+			"xxl_pendek" => $post["xxl_pendek"],
+			"xxl_panjang" => $post["xxl_panjang"],
+			"xl_pendek" => $post["xl_pendek"],
+			"xl_panjang" => $post["xl_panjang"],
+			"m_pendek" => $post["m_pendek"],
+			"m_panjang" => $post["m_panjang"],
+			"jumbo_pendek" => $post["jumbo_pendek"],
+			"jumbo_panjang" => $post["jumbo_panjang"],
+
 		);
 		$this->db->insert('ukuran', $ukuran);
+		return $insert_id = $this->db->insert_id();
 	}
 
 
