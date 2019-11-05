@@ -75,7 +75,7 @@
 								</div>
 								<div class="col-md-6">
 									<label>Kategori Produk</label>
-									<select id="produk" class="form-control select" name="produk_id">
+									<select id="produk" class="form-control select" name="id_produk">
 										<option value="">Pilih Produk</option>
 										<?php foreach ($produk as $key => $value) : ?>
 											<option value="<?= $value['id_produk'] ?>" name="<?= $value['nama'] ?>"> <?= $value['nama'] ?></option>

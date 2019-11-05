@@ -15,17 +15,37 @@
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
+								<th>No</th>
+								<th>Kode Order</th>
 								<th>Costumer</th>
 								<th>Produk</th>
-								<th>Kode Order</th>
 								<th>Pegawai</th>
-								<th>Tanggal Masuk</th>
-								<th>Tanggal Selesai</th>
+								<th>Durasi Pemesanan</th>
 								<th>Status</th>
-								<th>Tindakan</th>
+
 							</tr>
 						</thead>
+						<tbody>
+							<?php $i = 1 ?>
+							<?php foreach ($pemesanan as $key => $value) : ?>
+								<tr>
+									<td><?= $i++ ?></td>
+									<td><?= $value['kode_order'] ?></td>
+									<td><?= $value['nama_costumer'] ?></td>
+									<td><?= $value['nama_produk'] ?></td>
+									<td><?= $value['nama_pegawai'] ?></td>
+									<td><?= $value['durasi_pemesanan'] ?></td>
+									<td>
+										<?php if ($value['status'] == 1) : ?>
+											Selsai
+										<?php else : ?>
+											Proses
+										<?php endif; ?>
 
+									</td>
+								</tr>
+							<?php endforeach; ?>
+						</tbody>
 					</table>
 				</div>
 			</div>

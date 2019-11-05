@@ -7,7 +7,9 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			
+			<?php if (validation_errors()) : ?>
+				<?= validation_errors() ?>
+			<?php endif ?>
 			<div class="modal-body">
 				<div id="custom-modal" class="modal-demo">
 					<form action="<?= base_url('pegawai/tambah_pegawai') ?>" method="post">
@@ -18,20 +20,20 @@
 								<input type="text" class="form-control" id="nama" name="nama">
 							</div>
 							<div class="form-group">
-							<label for="name">Level</label>
-							<select class="form-control " style="width: 100%;" name="Level">
-								<option value="Admin">Admin</option>
-								<option value="Pegawai">Pegawai</option>
-							</select>
+								<label for="name">Level</label>
+								<select class="form-control " style="width: 100%;" name="level">
+									<option value="Admin">Admin</option>
+									<option value="Pegawai">Pegawai</option>
+								</select>
 							</div>
 							<div class="form-group">
-							<label for="pekerjaan">Pekerjaan</label>
-							<select class="form-control " style="width: 100%;" name="Level">
-								<option value="Potong">Potong</option>
-								<option value="Sablon">Sablon</option>
-								<option value="Jahit">Jahit</option>
-								<option value="Packing">Packing</option>
-							</select>
+								<label for="pekerjaan">Pekerjaan</label>
+								<select class="form-control " style="width: 100%;" name="pekerjaan">
+									<option value="Potong">Potong</option>
+									<option value="Sablon">Sablon</option>
+									<option value="Jahit">Jahit</option>
+									<option value="Packing">Packing</option>
+								</select>
 							</div>
 						</div>
 						<div class="modal-footer">

@@ -17,6 +17,7 @@
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
+								<th>No</th>
 								<th>Kode Order</th>
 								<th>Costumer</th>
 								<th>Produk</th>
@@ -27,8 +28,10 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php $i = 1 ?>
 							<?php foreach ($pemesanan as $key => $value) : ?>
 								<tr>
+									<td><?= $i++ ?></td>
 									<td><?= $value['kode_order'] ?></td>
 									<td><?= $value['nama_costumer'] ?></td>
 									<td><?= $value['nama_produk'] ?></td>
@@ -60,8 +63,7 @@
 		</section>
 	</div>
 </div>
-
-
+<!-- model edit -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
@@ -139,7 +141,6 @@
 															<div class="col-sm-7">
 															</div>
 														</div>
-
 													</div>
 													<div class="col-md-3">
 														<div class="form-group row">
@@ -148,7 +149,6 @@
 																<input type="text" class="form-control" id="xs_pendek" placeholder="pendek">
 																<input type="text" class="form-control" id="xs_panjang" placeholder="panjang"><br>
 															</div>
-
 
 															<label for="input" class="col-sm-3 col-form-label">L</label>
 															<div class="col-sm-7">
