@@ -17,7 +17,7 @@ $(function() {
 				$("#kode_order").val(data.kode_order);
 				$("#id_costumer").val(data.id_costumer);
 				$("#id_pegawai").val(data.id_pegawai);
-				$("#id_produk").val(data.nama_produk);
+				$("#id_produk").val(data.id_produk);
 				$("#durasi_pemesanan").val(data.durasi_pemesanan);
 				$("#jenis_kain").val(data.jenis_kain);
 				$("#warna").val(data.warna);

@@ -54,9 +54,11 @@ class Model_pemesanan extends CI_Model
 			"jenis_sablon"			=> $post["jenis_sablon"],
 			"keterangan" 			=> $post["keterangan"]
 		);
-
-
 		$this->db->insert('pemesanan', $data);
+		$ukuran = array(
+			// "id_pemesanan" 	=> $this->db->/
+		);
+		$this->db->insert('ukuran', $ukuran);
 	}
 
 

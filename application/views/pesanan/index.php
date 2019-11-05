@@ -60,8 +60,7 @@
 		</section>
 	</div>
 </div>
-
-
+<!-- model edit -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
@@ -139,7 +138,6 @@
 															<div class="col-sm-7">
 															</div>
 														</div>
-
 													</div>
 													<div class="col-md-3">
 														<div class="form-group row">
@@ -148,8 +146,7 @@
 																<input type="text" class="form-control" id="xs_pendek" placeholder="pendek">
 																<input type="text" class="form-control" id="xs_panjang" placeholder="panjang"><br>
 															</div>
-
-
+															
 															<label for="input" class="col-sm-3 col-form-label">L</label>
 															<div class="col-sm-7">
 																<input type="text" class="form-control" id="l_pendek" placeholder="pendek">

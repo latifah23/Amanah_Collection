@@ -5,41 +5,37 @@
 		</h1><br>
 	</section>
 
-	<div class="row">
-		<section class="content">
-
-			<div class="col-md-12">
-
-				<div class="form-group row">
-					<label for="input" class="col-sm-3 col-form-label">Jenis Kain</label>
-					<div class="col-sm-7">
-						<select class="form-control " style="width: 100%;" name="jenis_kain">
-							<option value="Lacos Katun">Lacos Katun</option>
-							<option value="TC">TC</option>
-							<option value="Polyester PE">Polyester PE</option>
-							<option value="Double katun">Double Katun</option>
-						</select>
-					</div>
+	<div class="row">		
+		<div class="col-md-12">
+			<div class="form-group row">
+				<label for="input" class="col-sm-3 col-form-label">Jenis Kain</label>
+				<div class="col-sm-7">
+					<select class="form-control " style="width: 100%;" name="jenis_kain">
+						<option value="Lacos Katun">Lacos Katun</option>
+						<option value="TC">TC</option>
+						<option value="Polyester PE">Polyester PE</option>
+						<option value="Double katun">Double Katun</option>
+					</select>
 				</div>
-
-				<div class="form-group row">
-					<label for="input" class="col-sm-3 col-form-label">Warna Kain</label>
-					<div class="col-sm-7">
-						<input type="text" class="form-control" id="input" placeholder="Warna Kain" name="warna">
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<label for="input" class="col-sm-3 col-form-label">Jenis Sablon</label>
-					<div class="col-sm-7">
-						<select class="form-control " style="width: 100%;" name="jenis_sablon">
-							<option value="Rubber">Rubber</option>
-							<option value="Plastisol">Plastisol</option>
-						</select>
-					</div>
-				</div>
-
 			</div>
+
+			<div class="form-group row">
+				<label for="input" class="col-sm-3 col-form-label">Warna Kain</label>
+				<div class="col-sm-7">
+					<input type="text" class="form-control" id="input" placeholder="Warna Kain" name="warna">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="input" class="col-sm-3 col-form-label">Jenis Sablon</label>
+				<div class="col-sm-7">
+					<select class="form-control " style="width: 100%;" name="jenis_sablon">
+						<option value="Rubber">Rubber</option>
+						<option value="Plastisol">Plastisol</option>
+					</select>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div class="row">
@@ -50,30 +46,26 @@
 					<div class="col-sm-7">
 					</div>
 				</div>
-
 			</div>
 			<div class="col-md-3">
 				<div class="form-group row">
 					<label for="input" class="col-sm-3 col-form-label">XS</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" id="input" placeholder="Panjang">
-						<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
+						<input type="text" class="form-control" id="xs_pendek" placeholder="pendek">
+						<input type="text" class="form-control" id="xs_panjang" placeholder="panjang"><br>
 					</div>
-
-
+					
 					<label for="input" class="col-sm-3 col-form-label">L</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" id="input" placeholder="Panjang">
-						<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
+						<input type="text" class="form-control" id="l_pendek" placeholder="pendek">
+						<input type="text" class="form-control" id="l_panjang" placeholder="panjang"><br>
 					</div>
 
 					<label for="input" class="col-sm-3 col-form-label">XXXL</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" id="input" placeholder="Panjang">
-						<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
+						<input type="text" class="form-control" id="xxxl_pendek" placeholder="pendek">
+						<input type="text" class="form-control" id="xxxl_panjang" placeholder="panjang"><br>
 					</div>
-
-
 				</div>
 			</div>
 
@@ -81,24 +73,21 @@
 				<div class="form-group row">
 					<label for="input" class="col-sm-3 col-form-label">S</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" id="input" placeholder="Panjang">
-						<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
+						<input type="text" class="form-control" id="s_pendek" placeholder="pendek">
+						<input type="text" class="form-control" id="s_panjang" placeholder="panjang"><br>
 					</div>
-
 
 					<label for="input" class="col-sm-3 col-form-label">XL</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" id="input" placeholder="Panjang">
-						<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
+						<input type="text" class="form-control" id="xl_pendek" placeholder="pendek">
+						<input type="text" class="form-control" id="xl_panjang" placeholder="panjang"><br>
 					</div>
 
 					<label for="input" class="col-sm-3 col-form-label">Jumbo</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" id="input" placeholder="Panjang">
-						<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
+						<input type="text" class="form-control" id="jumbo_pendek" placeholder="pendek">
+						<input type="text" class="form-control" id="jumbo_panjang" placeholder="panjang"><br>
 					</div>
-
-
 				</div>
 			</div>
 
@@ -106,23 +95,20 @@
 				<div class="form-group row">
 					<label for="input" class="col-sm-3 col-form-label">M</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" id="input" placeholder="Panjang">
-						<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
+						<input type="text" class="form-control" id="m_pendek" placeholder="pendek">
+						<input type="text" class="form-control" id="m_panjang" placeholder="panjang"><br>
 					</div>
-
 
 					<label for="input" class="col-sm-3 col-form-label">XXL</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" id="input" placeholder="Panjang">
-						<input type="text" class="form-control" id="input" placeholder="Pendek"><br>
+						<input type="text" class="form-control" id="xxl_pendek" placeholder="pendek">
+						<input type="text" class="form-control" id="xxl_panjang" placeholder="panjang"><br>
 					</div>
-
-
 				</div>
 			</div>
 		</div>
-
-		<div class="row">
+		
+		<div class="col-md-12">
 			<div class="form-group">
 				<label for="exampleInputFile" class="col-sm-3 col-form-label">Upload File</label>
 				<div class="input-group">
@@ -136,16 +122,18 @@
 				</div>
 			</div>
 
-			<div class="form-group row">
+			<div class="form-group">
 				<label for="message" class="col-sm-3 col-form-label">Keterangan</label>
 				<div class="col-sm-7">
 					<textarea id="note_1_1" name="keterangan" class="form-control" placeholder="Keterangan Pekerjaan"></textarea>
 				</div>
 			</div>
 		</div>
+		<div class="col-md-12">		
+			<button type="submit" class="btn btn-primary">SAVE</button>
+			<button type="button" class="btn btn-danger">CANCEL</button>
+		</div>
 
-		<button type="submit" class="btn btn-primary">SAVE</button>
-		<button type="button" class="btn btn-danger">CANCEL</button>
 	</div>
-	</section>
 </div>
+
