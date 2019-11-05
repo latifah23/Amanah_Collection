@@ -63,6 +63,7 @@
 						<li class="<?= $this->uri->segment(1) == 'home' ? 'active' : ''  ?>"><a href="<?= base_url('home') ?>">Home</a></li>
 						<li class="<?= $this->uri->segment(1) == 'pesanan' ? 'active' : ''  ?>"><a href="<?= base_url('pesanan') ?>">Pesanan <span class="sr-only">(current)</span></a></li>
 						<li class="<?= $this->uri->segment(1) == 'riwayat' ? 'active' : ''  ?>"><a href="<?= base_url('riwayat') ?>">Riwayat</a></li>
+						<li class="<?= $this->uri->segment(1) == 'payment' ? 'active' : ''  ?>"><a href="<?= base_url('payment') ?>">Payment</a></li>
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown">Pegawai <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">

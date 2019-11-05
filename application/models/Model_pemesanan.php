@@ -90,7 +90,7 @@ class Model_pemesanan extends CI_Model
 			// "produk_id" 			=> $post["produk_id"],
 			"jenis_kain" 			=> $post["jenis_kain"],
 			"warna" 				=> $post["warna"],
-			// "jumlah_pemesanan" 		=> $post["jumlah_pemesanan"],
+			"jumlah_pemesanan" 		=> $post["jumlah_pemesanan"],
 			// "jenis_sablon"			=> $post["jenis_sablon"],
 			"keterangan" 			=> $post["keterangan"]
 		);
