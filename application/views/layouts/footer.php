@@ -38,7 +38,13 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url('assets/') ?>dist/js/demo.js"></script>
 <script src="<?= base_url('assets/') ?>dist/js/script.js"></script>
-
+<!--Tambah Date Picker!-->
+<script>
+	//Date picker
+	$('#datepicker').datepicker({
+		startDate: new Date()
+	});
+</script>
 </body>
 
 </html>

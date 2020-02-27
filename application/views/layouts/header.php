@@ -51,34 +51,34 @@
 		<nav class="navbar navbar-static-top">
 			<div class="container">
 				<div class="navbar-header">
-					<a href="../../index2.html" class="navbar-brand"><b>AMANAH</b> Collection</a>
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+					<div class="navbar-brand"><b>AMANAH</b> Collection</a>
+					<!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
 						<i class="fa fa-bars"></i>
-					</button>
+					</button> -->
 				</div>
 
 
 				<div class="collapse navbar-collapse pull-left" id="navbar-collapse">
 					<ul class="nav navbar-nav">
 						<li class="<?= $this->uri->segment(1) == 'home' ? 'active' : ''  ?>"><a href="<?= base_url('home') ?>">Home</a></li>
-						<li class="<?= $this->uri->segment(1) == 'pesanan' ? 'active' : ''  ?>"><a href="<?= base_url('pesanan') ?>">Pesanan <span class="sr-only">(current)</span></a></li>
+						<li class="<?= $this->uri->segment(1) == 'pesanan/tambah_pesanan' ? 'active' : ''  ?>"><a href="<?= base_url('pesanan/tambah_pesanan') ?>">Pesan Baru</a></li>
+						<li class="<?= $this->uri->segment(1) == 'pesanan' ? 'active' : ''  ?>"><a href="<?= base_url('pesanan') ?>">Data Pesan <span class="sr-only">(current)</span></a></li>
+						<li class="dropdown <?= $this->uri->segment(1) == 'customer' ? 'active' : ''  ?>">
+							<a class="dropdown-toggle" data-toggle="dropdown">Customer <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a class="dropdown-item" data-toggle="modal" data-target="#modalcustomer">Tambah Customer</a></li>
+								<li><a href="<?= base_url('customer') ?>">Data customer</a></li>
+							</ul>
+						</li>
+						<li class="dropdown <?= $this->uri->segment(1) == 'master' ? 'active' : ''  ?>">
+							<a class="dropdown-toggle" data-toggle="dropdown">Master <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="<?= base_url('master/produk') ?>">Produk</a></li>
+								<li><a href="<?= base_url('master/kain') ?>">Kain</a></li>
+								<li><a href="<?= base_url('master/sablon') ?>">Sablon</a></li>
+							</ul>
+						</li>
 						<li class="<?= $this->uri->segment(1) == 'riwayat' ? 'active' : ''  ?>"><a href="<?= base_url('riwayat') ?>">Riwayat</a></li>
-						<li class="<?= $this->uri->segment(1) == 'payment' ? 'active' : ''  ?>"><a href="<?= base_url('payment') ?>">Payment</a></li>
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown">Pegawai <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a class="dropdown-item" data-toggle="modal" data-target="#modalPegawai">Tambah Pegawai</a></li>
-								<li><a href="<?= base_url('pegawai') ?>">Data Pegawai</a></li>
-							</ul>
-						</li>
-						<li class="dropdown <?= $this->uri->segment(1) == 'costumer' ? 'active' : ''  ?>">
-							<a class="dropdown-toggle" data-toggle="dropdown">Costumer <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a class="dropdown-item" data-toggle="modal" data-target="#modalCostumer">Tambah Costumer</a>
-								</li>
-								<li><a href="<?= base_url('costumer') ?>">Data Costumer</a></li>
-							</ul>
-						</li>
 					</ul>
 				</div>
 				<div class="navbar-custom-menu">
@@ -86,51 +86,16 @@
 
 						<li class="dropdown user user-menu">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<img src="<?= base_url('assets/') ?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-								<span class="hidden-xs">Alexander Pierce</span>
+								<img src="<?= base_url('assets/') ?>dist/img/logout.PNG">
+								<span class="hidden-xs">LOGOUT</span>
 							</a>
-							<ul class="dropdown-menu">
-								<li class="user-header">
-									<img src="<?= base_url('assets/') ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-									<p>
-										Alexander Pierce - Web Developer
-										<small>Member since Nov. 2012</small>
-									</p>
-								</li>
-
-								<li class="user-body">
-									<div class="row">
-										<div class="col-xs-4 text-center">
-											<a href="#">Followers</a>
-										</div>
-										<div class="col-xs-4 text-center">
-											<a href="#">Sales</a>
-										</div>
-										<div class="col-xs-4 text-center">
-											<a href="#">Friends</a>
-										</div>
-									</div>
-
-								</li>
-
-								<li class="user-footer">
-									<div class="pull-left">
-										<a href="#" class="btn btn-default btn-flat">Profile</a>
-									</div>
-									<div class="pull-right">
-										<a href="#" class="btn btn-default btn-flat">Sign out</a>
-									</div>
-								</li>
-							</ul>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</header>
-	<!-- Modal tambah costumer-->
+	<!-- Modal tambah customer-->
 	<?php
-	include APPPATH . 'views/pegawai/_form_add_pegawai.php';
-	include APPPATH . 'views/costumer/_form_add_costumer.php';
+	include APPPATH . 'views/customer/_form_add_customer.php';
 	?>

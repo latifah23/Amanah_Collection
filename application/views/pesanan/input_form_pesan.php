@@ -17,7 +17,7 @@
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Costumer</th>
+								<th>customer</th>
 								<th>Produk</th>
 								<th>Kode Order</th>
 								<th>Pegawai</th>
@@ -29,7 +29,7 @@
 						<tbody>
 							<?php foreach ($pemesanan as $key => $value) : ?>
 								<tr>
-									<td><?= $value['nama_costumer'] ?></td>
+									<td><?= $value['nama_customer'] ?></td>
 									<td><?= $value['nama_produk'] ?></td>
 									<td><?= $value['kode_order'] ?></td>
 									<td><?= $value['nama_pegawai'] ?></td>

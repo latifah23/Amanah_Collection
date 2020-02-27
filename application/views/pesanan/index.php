@@ -19,7 +19,7 @@
 							<tr>
 								<th>No</th>
 								<th>Kode Order</th>
-								<th>Costumer</th>
+								<th>customer</th>
 								<th>Produk</th>
 								<th>Pegawai</th>
 								<th>Durasi Pemesanan</th>
@@ -33,7 +33,7 @@
 								<tr>
 									<td><?= $i++ ?></td>
 									<td><?= $value['kode_order'] ?></td>
-									<td><?= $value['nama_costumer'] ?></td>
+									<td><?= $value['nama_customer'] ?></td>
 									<td><?= $value['nama_produk'] ?></td>
 									<td><?= $value['nama_pegawai'] ?></td>
 									<td><?= $value['durasi_pemesanan'] ?></td>
@@ -63,6 +63,8 @@
 		</section>
 	</div>
 </div>
+
+
 <!-- model edit -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
@@ -98,10 +100,10 @@
 												<input type="text" class="form-control" id="kode_order" name="kode_order" readonly>
 											</div>
 											<div class="form-group">
-												<label for="costumer">Costumer</label>
-												<select class="form-control" name="id_costumer" id="id_costumer">
-													<?php foreach ($costumer as $key => $value) : ?>
-														<option value="<?= $value['id_costumer'] ?>"><?= $value['nama'] ?></option>
+												<label for="customer">customer</label>
+												<select class="form-control" name="id_customer" id="id_customer">
+													<?php foreach ($customer as $key => $value) : ?>
+														<option value="<?= $value['id_customer'] ?>"><?= $value['nama'] ?></option>
 													<?php endforeach ?>
 												</select>
 											</div>

@@ -17,7 +17,7 @@
 							<tr>
 								<th>No</th>
 								<th>Kode Order</th>
-								<th>Costumer</th>
+								<th>customer</th>
 								<th>Produk</th>
 								<th>Pegawai</th>
 								<th>Durasi Pemesanan</th>
@@ -31,7 +31,7 @@
 								<tr>
 									<td><?= $i++ ?></td>
 									<td><?= $value['kode_order'] ?></td>
-									<td><?= $value['nama_costumer'] ?></td>
+									<td><?= $value['nama_customer'] ?></td>
 									<td><?= $value['nama_produk'] ?></td>
 									<td><?= $value['nama_pegawai'] ?></td>
 									<td><?= $value['durasi_pemesanan'] ?></td>

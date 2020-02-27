@@ -6,9 +6,8 @@ class Pesanan extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model("model_pegawai");
 		$this->load->model('model_produk');
-		$this->load->model("model_costumer");
+		$this->load->model("model_customer");
 		$this->load->model("model_pemesanan");
 
 		$this->load->library('form_validation');
@@ -16,8 +15,7 @@ class Pesanan extends CI_Controller
 	public function index()
 	{
 		$data['produk'] = $this->model_produk->getAll();
-		$data['pegawai'] = $this->model_pegawai->getAll();
-		$data['costumer'] = $this->model_costumer->getAll();
+		$data['customer'] = $this->model_customer->getAll();
 		$data['pemesanan'] = $this->model_pemesanan->getAll();
 		$this->load->view('layouts/header');
 		$this->load->view('pesanan/index', $data);
@@ -27,7 +25,7 @@ class Pesanan extends CI_Controller
 
 	public function tambah_pesanan()
 	{
-		$this->form_validation->set_rules('id_costumer', 'Id_costumer', 'required');
+		$this->form_validation->set_rules('id_customer', 'Id_customer', 'required');
 		$this->form_validation->set_rules('id_pegawai', 'Id_pegawai', 'required');
 		$this->form_validation->set_rules('durasi_pemesanan', 'Durasi_Pemesanan', 'required');
 		$this->form_validation->set_rules('kode_order', 'Kode_Order', 'required');
@@ -41,8 +39,7 @@ class Pesanan extends CI_Controller
 		if ($this->form_validation->run() == false) {
 			$data['kode_order']  = $this->model_pemesanan->cekkodeorder();
 			$data['produk'] = $this->model_produk->getAll();
-			$data['pegawai'] = $this->model_pegawai->getAll();
-			$data['costumer'] = $this->model_costumer->getAll();
+			$data['customer'] = $this->model_customer->getAll();
 			$this->load->view('layouts/header');
 			$this->load->view('pesanan/_form_tambah_pesanan', $data);
 			$this->load->view('layouts/footer');
@@ -59,7 +56,7 @@ class Pesanan extends CI_Controller
 		$data['pesanan'] = $this->model_pemesanan->getByid($id);
 		$questions_id = $data['pesanan']['id'];
 		$queryGetpesanan = "SELECT `pemesanan` .*, 
-			`costumer`.`nama` as nama_costumer, 
+			`customer`.`nama` as nama_customer, 
 			`pegawai`.`nama` as nama_pegawai,
 			`produk`.`nama` as nama_produk,
 			`ukuran`.`xs_pendek`as ukuran_xs_pendek,
@@ -80,7 +77,7 @@ class Pesanan extends CI_Controller
 			`ukuran`.`jumbo_panjang`as ukuran_jumbo_panjang,
 			`ukuran`.`jumlah` as jumlah
 			FROM `pemesanan` 
-			JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
+			JOIN `customer` ON `pemesanan`.`id_customer` = `customer`. `id_customer`
 			JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
 			JOIN	`produk` ON `pemesanan`.`id_produk` = `produk`. `id_produk`
 			JOIN `ukuran`	ON $questions_id = `ukuran`.`pemesanan_id` 	
@@ -98,7 +95,7 @@ class Pesanan extends CI_Controller
 
 	public function update_pesanan()
 	{
-		$this->form_validation->set_rules('id_costumer', 'Id_costumer', 'required');
+		$this->form_validation->set_rules('id_customer', 'Id_customer', 'required');
 		$this->form_validation->set_rules('id_pegawai', 'Id_pegawai', 'required');
 		$this->form_validation->set_rules('durasi_pemesanan', 'Durasi_Pemesanan', 'required');
 		$this->form_validation->set_rules('kode_order', 'Kode_Order', 'required');
@@ -130,11 +127,11 @@ class Pesanan extends CI_Controller
 		$data['pesanan'] = $this->model_pemesanan->getBykode($kode);
 		$pesanan_id = $data['pesanan']['id'];
 		$queryGetquestion = "SELECT `pemesanan` .*, 
-			`costumer`.`nama` as nama_costumer,`costumer`.`alamat`as alamat_costumer,`costumer`.`notelp`as notelp_costumer,`costumer`.`email` as email_costumer, 
+			`customer`.`nama` as nama_customer,`customer`.`alamat`as alamat_customer,`customer`.`notelp`as notelp_customer,`customer`.`email` as email_customer, 
 			`pegawai`.`nama` as nama_pegawai,
 			`produk`.`nama` as nama_produk
 			FROM `pemesanan` 
-			JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
+			JOIN `customer` ON `pemesanan`.`id_customer` = `customer`. `id_customer`
 			JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
 			JOIN	`produk` ON `pemesanan`.`id_produk` = `produk`. `id_produk`
 			WHERE `pemesanan`.`id` = $pesanan_id

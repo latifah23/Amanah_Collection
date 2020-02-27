@@ -22,59 +22,52 @@
 						<input type="hidden" name="id" id="id">
 						<div class="row">
 							<div class="box-body">
-								<div class="col-md-3">
+								<div class="col-md-6">
 									<div class="form-group">
-										<label>Nama Costumer</label>
-										<select class="form-control select2" style="width: 100%;" name="id_costumer">
-											<?php foreach ($costumer as $key => $value) : ?>
-												<option style="line-height: unset;" value="<?= $value['id_costumer'] ?>"><?= $value['nama'] ?></option>
+										<label>Nama customer</label>
+										<select class="form-control select2" style="width: 100%;" name="id_customer">
+											<?php foreach ($customer as $key => $value) : ?>
+												<option style="line-height: unset;" value="<?= $value['id_customer'] ?>"><?= $value['nama'] ?></option>
 											<?php endforeach; ?>
 										</select>
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Nama Pegawai</label>
-										<select class="form-control select2" style="width: 100%;" name="id_pegawai">
-											<?php foreach ($pegawai as $key => $value) : ?>
-												<option style="line-height: unset;" value="<?= $value['id_pegawai'] ?>"><?= $value['nama'] ?></option>
-											<?php endforeach; ?>
-										</select>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="input-group">
-										<div class="form-group">
-											<label>Date range:</label>
-
-											<div class="input-group">
-												<div class="input-group-addon">
-													<i class="fa fa-calendar"></i>
-												</div>
-												<input type="text" class="form-control pull-right" id="reservation" name="durasi_pemesanan">
-											</div>
-										</div>
-									</div>
-
-								</div>
-
-								<div class="col-md-3">
+								<!-- tambahan di datepicker -->
+								<div class="col-md-6">
 									<div class="form-group">
 										<label>Kode Orderan</label>
 										<input type="text" class="form-control" id="code_orderan" name="kode_order" value="<?= $kode_order ?>" readonly>
 									</div>
 								</div>
 
-
-								<div class="col-md-3">
-									<label>Status Transaksi</label>
-									<select class="form-control select2" style="width: 100%;" name="status">
-										<option value="0">Proses</option>
-										<option value="1">Selesai</option>
-									</select>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Tanggal Pemesanan</label>
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
+											</div>
+												<input type="text" class="form-control pull-right"   autocomplete="off" value="<?= date('m-d-Y')?>" readonly>
+										</div>
+									</div>
 								</div>
-								<div class="col-md-6">
-									<label>Kategori Produk</label>
+								
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Tanggal Pengambilan</label>
+											<div class="input-group date">
+												<div class="input-group-addon">
+													<i class="fa fa-calendar"></i>
+												</div>
+												<input type="text" class="form-control pull-right" id="datepicker" autocomplete="off" name="durasi_pemesanan">
+											</div>
+									</div>
+								</div>
+								
+								
+
+								<div class="col-md-4" >
+									<label >Kategori Produk</label>
 									<select id="produk" class="form-control select" name="id_produk">
 										<option value="">Pilih Produk</option>
 										<?php foreach ($produk as $key => $value) : ?>

@@ -8,9 +8,8 @@ class Riwayat extends CI_Controller
 	{
 
 		parent::__construct();
-		$this->load->model("model_pegawai");
 		$this->load->model('model_produk');
-		$this->load->model("model_costumer");
+		$this->load->model("model_customer");
 		$this->load->model("model_pemesanan");
 		$this->load->library('form_validation');
 	}

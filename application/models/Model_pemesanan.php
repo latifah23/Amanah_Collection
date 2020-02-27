@@ -7,11 +7,11 @@ class Model_pemesanan extends CI_Model
 	public function getAll()
 	{
 		$pemesananQuery = "SELECT `pemesanan` .*, 
-		`costumer`.`nama` as nama_costumer, 
+		`customer`.`nama` as nama_customer, 
 		`pegawai`.`nama` as nama_pegawai,
 		`produk`.`nama` as nama_produk
 		FROM `pemesanan` 
-		JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
+		JOIN `customer` ON `pemesanan`.`id_customer` = `customer`. `id_customer`
 		JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
 		JOIN	`produk` ON `pemesanan`.`id_produk` = `produk`. `id_produk`
 		ORDER BY `pemesanan`.`id` DESC";
@@ -21,11 +21,11 @@ class Model_pemesanan extends CI_Model
 	public function riwayat()
 	{
 		$riwayatQuery = "SELECT `pemesanan` .*, 
-		`costumer`.`nama` as nama_costumer, 
+		`customer`.`nama` as nama_customer, 
 		`pegawai`.`nama` as nama_pegawai,
 		`produk`.`nama` as nama_produk
 		FROM `pemesanan` 
-		JOIN `costumer` ON `pemesanan`.`id_costumer` = `costumer`. `id_costumer`
+		JOIN `customer` ON `pemesanan`.`id_customer` = `customer`. `id_customer`
 		JOIN `pegawai`  ON `pemesanan`.`id_pegawai` = `pegawai`. `id_pegawai`
 		JOIN	`produk` ON `pemesanan`.`id_produk` = `produk`. `id_produk`
 		WHERE `pemesanan`.`status` = '1'
@@ -36,7 +36,7 @@ class Model_pemesanan extends CI_Model
 	public function cekkodeorder()
 	{
 		//keterangan 
-		//tbl_users di ganti sesuai dengan nama tabel costumer di database
+		//tbl_users di ganti sesuai dengan nama tabel customer di database
 
 		$this->db->select('RIGHT(pemesanan.kode_order,2) as kode_order', FALSE);
 		$this->db->order_by('kode_order', 'DESC');
@@ -60,7 +60,7 @@ class Model_pemesanan extends CI_Model
 		$post = $this->input->post();
 		$data = array(
 			"id_pegawai" 			=> $post["id_pegawai"],
-			"id_costumer" 			=> $post["id_costumer"],
+			"id_customer" 			=> $post["id_customer"],
 			"durasi_pemesanan" 		=> $post["durasi_pemesanan"],
 			"kode_order" 			=> $post["kode_order"],
 			"status" 				=> $post["status"],
@@ -120,7 +120,7 @@ class Model_pemesanan extends CI_Model
 		$post = $this->input->post();
 		$data = array(
 			"id_pegawai" 			=> $post["id_pegawai"],
-			"id_costumer" 			=> $post["id_costumer"],
+			"id_customer" 			=> $post["id_customer"],
 			"durasi_pemesanan" 		=> $post["durasi_pemesanan"],
 			"kode_order" 			=> $post["kode_order"],
 			// "status" 				=> $post["status"],

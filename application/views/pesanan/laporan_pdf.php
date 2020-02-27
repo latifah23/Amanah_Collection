@@ -115,10 +115,10 @@
 					<div class="col-sm-5 invoice-col">
 						To
 						<br>
-						<strong><?=$get_pesanan['nama_costumer'] ?></strong><br>
-						<?=$get_pesanan['alamat_costumer'] ?>, CA 13351<br>
-						<b>Phone:</b><?=$get_pesanan['notelp_costumer'] ?><br>
-						<b>Email:</b><?=$get_pesanan['email_costumer'] ?>						
+						<strong><?=$get_pesanan['nama_customer'] ?></strong><br>
+						<?=$get_pesanan['alamat_customer'] ?>, CA 13351<br>
+						<b>Phone:</b><?=$get_pesanan['notelp_customer'] ?><br>
+						<b>Email:</b><?=$get_pesanan['email_customer'] ?>						
 					</div>
 				</td>
 				<td >
